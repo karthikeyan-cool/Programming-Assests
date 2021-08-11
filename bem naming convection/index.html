@@ -1,0 +1,2305 @@
+<!doctype html>
+<html lang="en" id="top-of-site" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>
+    BEM 101 | CSS-Tricks  </title>
+<link rel="icon" href="/favicon.ico" size="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ff7a18">
+<meta name="monetization" content="$ilp.uphold.com/biyqg2MkQKbe">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="CSS-Tricks Search">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://css-tricks.com/feed/">
+<link rel="preconnect" href="https://s3.buysellads.com">
+<link rel="dns-prefetch" href="https://s3.buysellads.com">
+<link rel="preconnect" href="https://srv.buysellads.com">
+<link rel="dns-prefetch" href="https://srv.buysellads.com">
+<link rel="preconnect" href="https://res.cloudinary.com">
+<link rel="dns-prefetch" href="https://res.cloudinary.com">
+<link rel="preconnect" href="https://static.codepen.io">
+<link rel="dns-prefetch" href="https://static.codepen.io">
+<style id="jetpack-boost-critical-css">@media all{@charset "UTF-8";*{box-sizing:border-box}a{text-decoration:none}article,header,nav{display:block}html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0}body,html,ol,ul{margin:0}ol,ul{padding:0}nav ul{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}input,textarea{font-size:100%;margin:0;vertical-align:baseline}input{line-height:normal}textarea{overflow:auto;vertical-align:top}@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}@font-face{font-family:MD Primer Bold;font-weight:700}@font-face{font-family:Blanco;font-weight:400}@font-face{font-family:Blanco;font-weight:700}@font-face{font-family:Blanco;font-style:italic}@font-face{font-family:Blanco;font-weight:700;font-style:italic}html{font-family:Blanco,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:clamp(12px,calc(.8rem + .25vw),20px);font-weight:400;line-height:1.7}a{color:#0089c7}.article-title{font-size:clamp(1.2rem,calc(1rem + 3.5vw),4rem);text-shadow:0 2px 2px rgba(0,0,0,.5)}h1,h3,h4{font-weight:800;margin:0 0 1.5rem;line-height:1.1}h3 a{color:inherit}h1{font-family:MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;font-style:normal;font-size:clamp(2rem,calc(2rem + 1.2vw),3rem);font-weight:700}h3{font-family:MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;font-style:normal;font-weight:700;font-size:2rem;letter-spacing:.03rem;font-weight:800}body:not(.page-id-21059):not(.parent-pageid-3222):not(.postid-181375):not(.postid-199370):not(.woocommerce-checkout) .article-content h3{margin-top:100px}body:not(.page-id-21059):not(.parent-pageid-3222):not(.postid-181375):not(.postid-199370):not(.woocommerce-checkout) .article-content h3 a{color:#0089c7}.aal_anchor{margin-left:-21px;margin-right:5px;position:relative;scroll-margin-top:100px;opacity:.33}.aal_anchor:before{content:"";position:absolute;width:100px;height:100px;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.aal_anchor svg{position:relative}h4{font-family:MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;font-style:normal;font-weight:700;font-size:1.5rem;margin:0 0 .8rem}h4{line-height:1.05}.article-content li,.article-content p{max-width:700px}.article-content ol,.article-content ul{margin:0 0 1.5rem 1.5rem}.article-content ol li,.article-content ul li{line-height:1.6}.article-content ul li>*{text-indent:0}.article-content li{margin:0 0 5px}strong{font-weight:700}blockquote{font-size:1.3rem;letter-spacing:-.02rem;margin:1.5rem 0;padding:0 0 0 3rem;position:relative;font-style:italic}.article-content blockquote>*{hanging-punctuation:first}.article-content blockquote>:first-child:before{content:"\0022";width:100px;opacity:.15;font-size:100px;line-height:.85;position:absolute;left:-1rem}@media (max-width:800px){.article-content blockquote>:first-child:before{font-size:90px;left:-1.2rem}}blockquote p{margin:0 0 .25rem}blockquote p:last-child{margin:0}blockquote,blockquote p{max-width:900px}p,pre{margin:0 0 1.5rem}pre{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;clear:both;color:#fff;background:#1b1b1b;padding:0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-ms-word-break:normal;word-break:normal;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;position:relative;line-height:28px;border-radius:8px;overflow:hidden}pre[rel]:not([rel=""]):before{font-family:MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;font-style:normal;font-weight:700;font-size:.5rem;content:attr(rel);color:#fff;position:absolute;top:-.2rem;right:.4rem;padding:0;color:#ff7a18!important}pre code{scrollbar-color:#666 #201c29;background:0 0;white-space:pre;-webkit-overflow-scrolling:touch;overflow-x:scroll;display:block;max-width:100%;min-width:100px;font-size:16px;padding:15px 20px 12px 22px;line-height:1.75}pre code::-webkit-scrollbar{width:.5em;height:.5em}@media (max-width:800px){pre code{font-size:11px;padding:15px 20px 10px 14px}}code{font-size:inherit;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace}li:not(.comment):not([data-category])>code,p>code{overflow-wrap:break-word;word-wrap:break-word;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:.1rem .3rem .2rem;border-radius:.2rem;font-size:88%}.screen-reader-text{position:absolute!important;clip:rect(1px,1px,1px,1px);width:1px;height:1px;overflow:hidden}p:empty{display:none}.language-javascript{color:#f5d67b}.button{font-family:MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;font-style:normal;background-color:#5e5e5e!important;color:#fff!important;border:0;border-bottom:1px solid #262626;border-right:1px solid #262626;box-shadow:inset 1px 1px 0 #777,0 2px 3px rgba(0,0,0,.4);display:inline-block;font-weight:700;line-height:1.4;text-transform:uppercase;text-decoration:none!important;border-radius:4px!important;white-space:nowrap;padding:1rem 1.5rem;text-align:center;position:relative}input[type=text],textarea{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;background:#eaeaea;border:1px solid #d4d4d4!important;padding:.5rem;border-radius:4px;border:0;width:100%}textarea{padding:1rem;display:block}html{--maxWidth:1600px;--gap:3rem;scrollbar-color:#666 #201c29;background:radial-gradient(900px 900px at top center,#5e5e5e,#2d3334,#262626);background-repeat:no-repeat;color:#fff;overflow-x:hidden}html::-webkit-scrollbar{width:16px;height:16px}@media (max-width:1200px){html{--gap:2rem}}@media (max-width:800px){html{--gap:1rem}}#top-of-site-pixel-anchor{position:absolute;width:1px;height:1px;top:500px;left:0}@media (max-width:800px){#top-of-site-pixel-anchor{top:46px}}.mega-header,.page-wrap{max-width:var(--maxWidth);margin:0 auto;padding:0 var(--gap)}main{position:relative;z-index:1}.articles-and-sidebar{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--gap);margin:0 auto}.articles-and-sidebar>:not(.sidebar){align-self:start}@media (max-width:800px){.articles-and-sidebar{display:block;padding-top:0}}.articles-and-sidebar.single-mini{display:block}.articles-and-sidebar.single-mini .sidebar{display:none}.articles-and-sidebar.single-mini .article-content{font-size:1.5rem}@media (max-width:800px){.articles-and-sidebar.single-mini .article-content{font-size:1.2rem}}@media (max-width:800px){.sidebar{display:none}}img{max-width:100%}.site-header{position:relative;z-index:2;display:flex;padding:0 var(--gap);margin:0 0 var(--gap) 0;background-color:#111;background-image:paint(fleck);border-bottom:1px solid #676767}.site-header .logo{flex:0;position:relative;align-self:stretch}.site-header .logo,.site-header .logo>a{display:flex;align-items:center}.site-header .icon-logo-star{fill:#fff;width:25px;height:25px;margin:0 .5rem 0 0}.site-header .icon-logo-text{fill:#fff;height:25px;width:170px;margin-right:var(--gap)}.site-header .header-middle-area{flex:1;width:100%}.site-header .main-nav>ul{display:flex;height:100%}.site-header .main-nav>ul>li>a{font-family:MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;font-style:normal;font-weight:700;text-transform:uppercase;font-weight:500;font-size:.8rem;height:100%;color:#fff;padding:1.2rem 1rem;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}@media (max-width:1000px){.site-header{padding:20px 20px 0;flex-wrap:wrap}.site-header .header-middle-area{flex:0 0 100%}.site-header .main-nav{padding-top:10px;-webkit-margin-start:-10px;margin-inline-start:-10px}.site-header .main-nav>ul>li>a{padding:.6rem .8rem;border-top-right-radius:4px;border-top-left-radius:4px}.site-header .icon-logo-star{width:18px;height:18px}.site-header .icon-logo-text{height:15px;width:116px}}@media (max-width:620px){.site-header{padding-top:15px}.site-header .main-nav{width:calc(100% + var(--gap)*2);overflow:auto}}.search-and-account{position:fixed;z-index:15;top:.9rem;right:var(--gap)}.search-and-account svg{width:32px;height:32px}@media (max-width:620px){.search-and-account{top:.95rem}.search-and-account svg{width:28px;height:28px}}.search-and-account a{margin-left:.5rem}.search-and-account a svg{-webkit-filter:drop-shadow(0 2px 5px rgba(0,0,0,.3));filter:drop-shadow(0 2px 5px rgba(0,0,0,.3))}.top-of-site-link{visibility:hidden;opacity:0;position:fixed;bottom:1.2rem;right:1.5rem;z-index:15}.top-of-site-link svg{-webkit-filter:drop-shadow(0 2px 5px rgba(0,0,0,.3));filter:drop-shadow(0 2px 5px rgba(0,0,0,.3))}.article-sponsor{padding:1rem 1.5rem calc(1rem + 10px);margin-bottom:-10px;border-radius:8px;background:rgba(0,0,0,.2)}.article-sponsor p{margin:0}.article-sponsor a{color:#fff;font-weight:700;position:relative;display:inline-block;line-height:1.2}.article-sponsor a:before{content:"";position:absolute;top:100%;width:100%;left:0;height:3px;border-radius:2px;background:linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)}.article-content{font-size:1.2rem;background:#fff;color:#000;overflow-wrap:break-word;border-radius:8px;padding:4rem;position:relative}@media (max-width:800px){.article-content{padding:1.66rem}}.article-content a{text-decoration:underline;-webkit-text-decoration-color:#a2dffb;text-decoration-color:#a2dffb}.article-content img{max-width:100%;height:auto!important}figure>img{display:block}.mega-header{position:relative;z-index:1;overflow:hidden;padding:0 0 2rem}.mega-header .tags a{color:#ffdfc7}.mega-header .author-name,.mega-header .author-row{color:#fff}.jp-relatedposts{margin-bottom:1rem}.author-row{-webkit-margin-before:auto;margin-block-start:auto;display:grid;grid-template-columns:40px 1fr;gap:.5rem;align-items:center;color:#565656;line-height:1.3;padding-top:.5rem}.author-row>div>*{white-space:nowrap}.avatar{width:40px;height:40px;border-radius:50%;margin-right:.5rem}.author-name{font-weight:700;color:#000}.tags{line-height:1;margin:0 0 .5rem}.tags a{font-family:MD Primer Bold,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;font-style:normal;font-weight:700;text-transform:uppercase;color:#ff7a18;font-size:.66rem;-webkit-margin-end:.66rem;margin-inline-end:.66rem}.CommentForm .comment-wrap .author-avatar,.comment ul .comment-wrap .author-avatar,.commentlist .comment-wrap .author-avatar{margin:0;align-self:start;grid-area:auto}#commentform label{display:block}#commentform .comment-notes,#commentform .required{display:none}#commentform p{margin-bottom:.5rem}.bsap-doubles.side-by-side{margin-top:var(--gap)}#all-modules{height:100%}#scroll-ad-position{width:1px;height:1px}#sticky-sidebar-stuff{position:-webkit-sticky;position:sticky;top:2.5rem;opacity:0;visibility:hidden}@media (max-width:620px){#sticky-sidebar-stuff{top:89px}}.fem-ad{background:#1f1f1f;color:#fff;border-radius:8px;position:relative}.fem-ad:before{content:"";background:linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);position:absolute;top:-5px;left:-5px;width:calc(100% + 10px);height:calc(100% + 10px);z-index:-1;border-radius:12px}.fem-ad h4{font-size:1.2rem}.fem-ad .fem-learning-partner{font-size:.75rem;color:#fff;text-transform:uppercase;letter-spacing:.13rem;text-align:center;margin:0 0 .5rem}.fem-ad .fem-header-inner{background:rgba(0,0,0,.7);padding:1rem;border-radius:7px}.fem-ad .fem-title{text-align:center}.fem-ad .fem-logo{width:200px;display:block;margin:0 auto}.fem-ad .fem-message{background:#eaeaea;border-bottom-left-radius:7px;border-bottom-right-radius:7px;color:#000;padding:1.5rem;font-size:.85rem}.fem-ad .fem-message p{margin:0}.fem-footer-ad{margin:var(--gap) 0 var(--gap) 0;display:grid;grid-template-columns:1fr 2fr}@media (max-width:1200px){.fem-footer-ad{grid-template-columns:4fr 3fr}}@media (max-width:800px){.fem-footer-ad{display:block}.fem-footer-ad .fem-header-inner{height:auto}}.fem-footer-ad .fem-header-inner{padding:4rem 1.5rem;display:grid;place-items:center}.single-almanac-content .almanac-sidebar{grid-area:1/1/2/2;background:#111;border-radius:8px;padding:1rem}.single-almanac-content .article-content-wrap{grid-area:1/2/2/3}.single-almanac-content .sidebar{grid-area:1/3/2/4}@media (max-width:650px){.single-almanac-content .article-content-wrap{grid-area:1/1/2/2;min-width:0}.single-almanac-content .almanac-sidebar{grid-area:2/1/3/2}}@media screen and (max-width:400px){@-ms-viewport{width:320px}}}@media all{#jp-relatedposts{display:none;padding-top:1em;margin:1em 0;position:relative;clear:both}.jp-relatedposts:after{content:'';display:block;clear:both}}</style><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<meta name="description" content="The following is a collaborative post by guest Joe Richardson, Robin Rendle, and a bunch of the CSS-Tricks staff. Joe wanted to do a post about BEM, which" />
+<link rel="canonical" href="https://css-tricks.com/bem-101/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="BEM 101" />
+<meta property="og:description" content="The following is a collaborative post by guest Joe Richardson, Robin Rendle, and a bunch of the CSS-Tricks staff. Joe wanted to do a post about BEM, which" />
+<meta property="og:url" content="https://css-tricks.com/bem-101/" />
+<meta property="og:site_name" content="CSS-Tricks" />
+<meta property="article:publisher" content="https://www.facebook.com/CSSTricks" />
+<meta property="article:published_time" content="2015-04-02T13:19:44+00:00" />
+<meta property="article:modified_time" content="2016-03-09T14:08:53+00:00" />
+<meta name="twitter:creator" content="@robinrendle" />
+<meta name="twitter:site" content="@CSS" />
+
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//c0.wp.com' />
+<link rel='dns-prefetch' href='//i0.wp.com' />
+<link rel='dns-prefetch' href='//i1.wp.com' />
+<link rel='dns-prefetch' href='//i2.wp.com' />
+<link rel="alternate" type="application/rss+xml" title="CSS-Tricks &raquo; BEM 101 Comments Feed" href="https://css-tricks.com/bem-101/feed/" />
+<link rel='stylesheet' id='css-tricks-style-css' href='https://css-tricks.com/wp-content/themes/CSS-Tricks-19/style.css?ver=cache_bust=1628036598079' type='text/css' media="not all" onload="this.media='all'" />
+<link rel='stylesheet' id='mediaelement-css' href='https://c0.wp.com/c/5.8/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css' type='text/css' media="not all" onload="this.media='all'" />
+<link rel='stylesheet' id='wp-mediaelement-css' href='https://c0.wp.com/c/5.8/wp-includes/js/mediaelement/wp-mediaelement.min.css' type='text/css' media="not all" onload="this.media='all'" />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel="https://api.w.org/" href="https://css-tricks.com/wp-json/" /><link rel="alternate" type="application/json" href="https://css-tricks.com/wp-json/wp/v2/posts/198754" /><link rel='shortlink' href='https://css-tricks.com/?p=198754' />
+<link rel="alternate" type="application/json+oembed" href="https://css-tricks.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcss-tricks.com%2Fbem-101%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://css-tricks.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcss-tricks.com%2Fbem-101%2F&#038;format=xml" />
+
+
+<meta property="og:image" content="https://css-tricks.com/wp-json/social-image-generator/v1/image/198754">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://css-tricks.com/wp-json/social-image-generator/v1/image/198754">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="jetpack-boost-ready" content="true" />
+<style type='text/css'>img#wpstats{display:none}</style>
+<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+<link rel="icon" href="https://i1.wp.com/css-tricks.com/wp-content/uploads/2021/07/star.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+<link rel="icon" href="https://i1.wp.com/css-tricks.com/wp-content/uploads/2021/07/star.png?fit=180%2C180&#038;ssl=1" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://i1.wp.com/css-tricks.com/wp-content/uploads/2021/07/star.png?fit=180%2C180&#038;ssl=1" />
+<meta name="msapplication-TileImage" content="https://i1.wp.com/css-tricks.com/wp-content/uploads/2021/07/star.png?fit=180%2C180&#038;ssl=1" />
+</head>
+<body class="post-template-default single single-post postid-198754 single-format-standard theme-CSS-Tricks-19 woocommerce-no-js jps-theme-CSS-Tricks-19 category-article">
+<div id="top-of-site-pixel-anchor"></div>
+<header class="site-header" id="site-header">
+<a id="skip-nav" class="skip-nav screen-reader-text" href="#maincontent">Skip to main content</a>
+<div class="logo">
+<a href="/">
+<div class="screen-reader-text">CSS-Tricks</div>
+<svg class="icon-logo-star" width="35px" height="35px" viewBox="0 0 362.62 388.52" data-spin-me="false">
+<path d="M156.58,239l-88.3,64.75c-10.59,7.06-18.84,11.77-29.43,11.77-21.19,0-38.85-18.84-38.85-40C0,257.83,14.13,244.88,27.08,239l103.6-44.74L27.08,148.34C13,142.46,0,129.51,0,111.85,0,90.66,18.84,73,40,73c10.6,0,17.66,3.53,28.25,11.77l88.3,64.75L144.81,44.74C141.28,20,157.76,0,181.31,0s40,18.84,36.5,43.56L206,149.52l88.3-64.75C304.93,76.53,313.17,73,323.77,73a39.2,39.2,0,0,1,38.85,38.85c0,18.84-12.95,30.61-27.08,36.5L231.93,194.26,335.54,239c14.13,5.88,27.08,18.83,27.08,37.67,0,21.19-18.84,38.85-40,38.85-9.42,0-17.66-4.71-28.26-11.77L206,239l11.77,104.78c3.53,24.72-12.95,44.74-36.5,44.74s-40-18.84-36.5-43.56Z" />
+</svg>
+<svg class="icon-logo-text" width="214px" height="35px" viewBox="0 0 474.15 58.26">
+<path d="M46 42.57a4.5 4.5 0 0 0-3 1.13c-4.1 3.46-8.13 5.39-14.08 5.39-10.78 0-18.58-8.93-18.58-20v-.09c0-11 7.88-19.87 18.58-19.87a20.42 20.42 0 0 1 13.48 5.03 4.95 4.95 0 0 0 7.88-3.86 4.94 4.94 0 0 0-1.93-3.94c-4.91-3.79-10.62-6.36-19.35-6.36-17 0-29 13.12-29 29.13v.16c0 16.17 12.23 29 28.64 29 9.09 0 15.12-2.9 20.43-7.56a4.76 4.76 0 0 0 1.61-3.54 4.71 4.71 0 0 0-4.68-4.62zm36.86-17.95c-10.86-2.62-13.43-4.5-13.43-8.85v-.16c0-3.7 3.38-6.68 9.17-6.68 4.43 0 8.61 1.45 13 4.26a4.78 4.78 0 0 0 2.57.72 4.6 4.6 0 0 0 4.67-4.59 4.47 4.47 0 0 0-2.17-3.94 31 31 0 0 0-17.91-5.22c-11.18 0-19.23 6.68-19.23 16.34v.16c0 10.38 6.76 13.92 18.74 16.82 10.46 2.41 12.73 4.58 12.73 8.6v.16c0 4.18-3.86 7.08-10 7.08a24.42 24.42 0 0 1-15.77-5.79 4.79 4.79 0 0 0-7.56 3.7 4.64 4.64 0 0 0 1.94 3.77 35.05 35.05 0 0 0 21.16 7.1c11.83 0 20.11-6.28 20.11-16.82v-.16c0-9.34-6.11-13.6-18.02-16.5zm49.88 0c-10.86-2.57-13.43-4.51-13.43-8.85v-.16c0-3.7 3.38-6.68 9.17-6.68 4.42 0 8.61 1.45 13 4.26a4.78 4.78 0 0 0 2.57.72 4.6 4.6 0 0 0 4.67-4.59 4.47 4.47 0 0 0-2.17-3.94 31 31 0 0 0-17.91-5.22c-11.18 0-19.23 6.68-19.23 16.33v.16c0 10.38 6.76 13.92 18.74 16.82 10.46 2.41 12.71 4.59 12.71 8.61v.16c0 4.18-3.86 7.08-10 7.08a24.42 24.42 0 0 1-15.77-5.79 4.79 4.79 0 0 0-7.56 3.7 4.64 4.64 0 0 0 1.96 3.77 35.05 35.05 0 0 0 21.16 7.08c11.83 0 20.11-6.28 20.11-16.82v-.16c0-9.32-6.11-13.58-18.02-16.48zm45.62 3.22h-15.13a4.79 4.79 0 0 0 0 9.58h15.12a4.79 4.79 0 0 0 0-9.58zm45.64-26.84h-37.45a4.59 4.59 0 0 0 0 9.17h13.68v42.62a5 5 0 0 0 10 0v-42.65h13.77a4.59 4.59 0 0 0 0-9.14zm38.86 0h-20.15a4.91 4.91 0 0 0-5 5v46.79a4.95 4.95 0 0 0 9.89 0v-15.13h12.47l13.68 17.46a5.65 5.65 0 0 0 4.83 2.58 4.67 4.67 0 0 0 4.75-4.59 5.74 5.74 0 0 0-1.61-3.78l-10.78-13.6c7.56-2.33 12.79-7.81 12.79-16.82v-.16a17 17 0 0 0-4.66-12.15c-3.62-3.54-9.17-5.6-16.25-5.6zm10.86 18.51c0 5.71-4.51 9.41-11.58 9.41h-14.53v-18.92h14.39c7.32 0 11.67 3.3 11.67 9.33zm27-18.91a4.89 4.89 0 0 0-5 4.91v47.28a4.95 4.95 0 0 0 9.89 0v-47.32a4.88 4.88 0 0 0-4.98-4.91zm62.67 42a4.5 4.5 0 0 0-3 1.13c-4.1 3.46-8.13 5.39-14.08 5.39-10.78 0-18.58-8.93-18.58-20v-.12c0-11 7.88-19.87 18.58-19.87a20.42 20.42 0 0 1 13.44 5.07 4.95 4.95 0 0 0 7.88-3.86 4.94 4.94 0 0 0-1.93-3.94c-4.98-3.83-10.7-6.4-19.38-6.4-17.06 0-29 13.12-29 29.13v.16c0 16.17 12.23 29 28.64 29 9.09 0 15.12-2.9 20.43-7.56a4.76 4.76 0 0 0 1.61-3.58 4.71 4.71 0 0 0-4.7-4.58zm41-16.82l17.54-16.9a4.81 4.81 0 0 0 1.77-3.7 4.53 4.53 0 0 0-4.7-4.62 5.2 5.2 0 0 0-4.1 1.85l-26.66 26.88v-23.82a4.95 4.95 0 0 0-9.9 0v47.32a4.95 4.95 0 0 0 9.9 0v-11.67l9.17-8.85 18.1 23.09a5 5 0 0 0 4.18 2.33 4.83 4.83 0 0 0 5-4.83 5.36 5.36 0 0 0-1.37-3.54zm51.8-1.13c-10.92-2.65-13.49-4.53-13.49-8.88v-.16c0-3.7 3.38-6.68 9.17-6.68 4.42 0 8.61 1.45 13 4.26a4.78 4.78 0 0 0 2.57.72 4.6 4.6 0 0 0 4.67-4.59 4.47 4.47 0 0 0-2.17-3.94 31 31 0 0 0-17.94-5.22c-11.15 0-19.2 6.68-19.2 16.34v.16c0 10.38 6.76 13.92 18.74 16.82 10.46 2.41 12.71 4.59 12.71 8.61v.16c0 4.18-3.86 7.08-10 7.08a24.42 24.42 0 0 1-15.77-5.79 4.79 4.79 0 0 0-7.56 3.7 4.64 4.64 0 0 0 1.96 3.76 35.05 35.05 0 0 0 21.12 7.1c11.83 0 20.11-6.28 20.11-16.82v-.16c.04-9.34-6.11-13.6-17.98-16.5z" />
+</svg> </a>
+</div>
+<div class="header-middle-area">
+<nav class="main-nav" id="main-nav">
+<ul>
+<li class="articles">
+<a href="/archives/">
+<span>Articles</span>
+</a>
+</li>
+<li class="videos">
+<a href="/video-screencasts/">
+<span>Videos</span>
+</a>
+</li>
+<li class="almanac">
+<a href="/almanac/">
+<span>Almanac</span>
+</a>
+</li>
+<li class="newsletter">
+<a href="/newsletters/">
+<span>Newsletter</span>
+</a>
+</li>
+<li class="guides">
+<a href="/guides/">
+<span>Guides</span>
+</a>
+</li>
+<li class="books">
+<a href="/books/">
+<span>Books</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="search-and-account">
+<a href="https://www.google.com/search?q=site:css-tricks.com%20layout" class="jetpack-search-filter__link">
+<span class="screen-reader-text">Search</span>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.0726 10.4326C12.4801 10.4326 10.4 12.5451 10.4 15.1053C10.4 17.6978 12.5125 19.7779 15.0726 19.7779C17.6651 19.7779 19.7453 17.6654 19.7453 15.1053C19.744 12.544 17.664 10.4326 15.0726 10.4326Z" fill="white" />
+<path d="M16.0327 0.447479C7.42401 0.447479 0.447693 7.4238 0.447693 16.0324C0.447693 24.6398 7.42401 31.6161 16.0314 31.6161C24.64 31.6161 31.6163 24.6398 31.6163 16.0324C31.6163 7.4238 24.64 0.447479 16.0327 0.447479ZM23.6163 24.0324C23.3926 24.2562 23.0401 24.385 22.6563 24.385C22.2726 24.385 21.9526 24.2575 21.6963 24.0324L18.7526 21.0887L18.4651 21.2487C17.4088 21.825 16.2576 22.145 15.0724 22.145C11.1998 22.145 8.06509 19.0087 8.06509 15.1376C8.06509 11.265 11.2013 8.13023 15.0724 8.13023C18.9451 8.13023 22.0798 11.2665 22.0798 15.1376C22.0798 16.5138 21.6961 17.8251 20.9273 18.9776L20.7348 19.2976L23.6473 22.2101C23.8711 22.4664 24.0311 22.7864 24.0311 23.1376C23.9998 23.4563 23.8723 23.7763 23.616 24.0326L23.6163 24.0324Z" fill="white" />
+</svg>
+</a>
+<a href="/product/membership/">
+<span class="screen-reader-text">Account</span>
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 1.7C11.5335 1.7 6.48243 4.61655 3.74917 9.35C1.0172 14.0835 1.0172 19.9165 3.74917 24.65C6.48246 29.3835 11.5335 32.3 17 32.3C20.4918 32.3133 23.8809 31.1193 26.5917 28.9199C29.9014 26.2557 31.9559 22.3365 32.2602 18.0984C32.5657 13.8603 31.0954 9.68748 28.2003 6.57682C25.3063 3.46636 21.249 1.69986 17.0003 1.69986L17 1.7ZM27.9956 24.411C27.2651 22.1412 25.014 20.2514 21.9925 19.2447C20.7069 20.6405 18.8967 21.4361 17 21.4361C15.1021 21.4347 13.292 20.6405 12.0074 19.2447C8.98463 20.2514 6.73335 22.1413 6.00439 24.411C4.20212 21.7388 3.43579 18.5008 3.8475 15.3041C4.25921 12.1073 5.82242 9.17082 8.24234 7.04174C10.6622 4.91276 13.7752 3.7387 16.9987 3.7387C20.2221 3.7387 23.3353 4.91276 25.7564 7.04041C28.1763 9.16939 29.7395 12.1057 30.1513 15.3027C30.563 18.4995 29.7966 21.7376 27.9957 24.411L27.9956 24.411Z" fill="white" />
+<path d="M22.5049 13.6092C22.5049 16.9919 20.0399 19.736 17 19.736C13.9586 19.736 11.4937 16.9921 11.4937 13.6092C11.4937 10.2251 13.9587 7.48236 17 7.48236C20.0401 7.48236 22.5049 10.2249 22.5049 13.6092Z" fill="white" />
+</svg>
+</a>
+</div>
+</div>
+</header>
+<div class="page-wrap">
+<div class="articles-and-sidebar ">
+<main id="post-198754">
+<article>
+<header class="mega-header">
+<h1 class="article-title">
+BEM 101 </h1>
+<div class="author-row">
+<a href="https://css-tricks.com/author/robinrendle/" aria-label="Author page of Robin Rendle">
+<img alt="Avatar of Robin Rendle" class="avatar avatar-80 photo avatar-default jetpack-lazy-image" height="80" src="https://css-tricks.com/wp-content/uploads/2019/01/me-black-white-80x80.jpg" width="80" data-lazy-src="https://css-tricks.com/wp-content/uploads/2019/01/me-black-white-80x80.jpg?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt="Avatar of Robin Rendle" class="avatar avatar-80 photo avatar-default" height="80" src="https://css-tricks.com/wp-content/uploads/2019/01/me-black-white-80x80.jpg" width="80"></noscript> </a>
+<div>
+<a class="author-name" href="https://css-tricks.com/author/robinrendle/">
+Robin Rendle </a>
+on
+<time datetime="">
+Apr 2, 2015 </time>
+(Updated on <time datetime="2016-03-09">Mar 9, 2016</time>)
+</div>
+</div>
+</header>
+<div class="article-sponsor">
+<p>
+Learn Development at <a href="https://frontendmasters.com/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-monthly-site-sponsor">Frontend Masters</a>
+</p>
+</div>
+<div class="article-content">
+<p><em class="explanation">The following is a collaborative post by guest <a href="http://lifes.gd/">Joe Richardson</a>, Robin Rendle, and a bunch of the CSS-Tricks staff. Joe wanted to do a post about BEM, which we loved, and just about everybody around here had thoughts and opinions about BEM, so we figured we&#8217;d all get together on it and do it together.</em></p>
+<p>The <strong>Block, Element, Modifier</strong> methodology (commonly referred to as <a href="https://en.bem.info/method">BEM</a>) is a popular <em>naming convention</em> for classes in HTML and CSS. <a href="https://en.bem.info/">Developed by</a> the team at Yandex, its goal is to help developers better understand the relationship between the HTML and CSS in a given project. </p>
+<p><span id="more-198754"></span></p>
+<p>Here&#8217;s an example of what a CSS developer writing in the BEM style might write:</p>
+<pre rel="CSS"><code class="language-css">/* Block component */
+.btn {}
+
+/* Element that depends upon the block */ 
+.btn__price {}
+
+/* Modifier that changes the style of the block */
+.btn--orange {} 
+.btn--big {}</code></pre>
+<p>In this CSS methodology a <strong>block</strong> is a top-level abstraction of a new component, for example a button: <code>.btn { }</code>. This block should be thought of as a parent. Child items, or <strong>elements</strong>, can be placed inside and these are denoted by two underscores following the name of the block like <code>.btn__price { }</code>. Finally, <strong>modifiers</strong> can manipulate the block so that we can theme or style that particular component without inflicting changes on a completely unrelated module. This is done by appending two hyphens to the name of the block just like <code>btn--orange</code>.</p>
+<p>The markup might then look like this:</p>
+<pre rel="HTML"><code class="language-markup">&lt;a class="btn btn--big btn--orange" href="https://css-tricks.com"&gt;
+  &lt;span class="btn__price"&gt;$9.99&lt;/span&gt;
+  &lt;span class="btn__text"&gt;Subscribe&lt;/span&gt;
+&lt;/a&gt;</code></pre>
+<p>If another developer wrote this markup, and we weren&#8217;t familiar with the CSS, we should still have a good idea of which classes are responsible for what and how they depend on one another. Developers can then build their own components and modify the existing block to their heart&#8217;s content. Without writing much CSS, developers are potentially capable of creating many different combinations of buttons simply by changing a class in the markup:</p>
+<p data-height="268" style="height: 268px; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1rem 0; padding: 1rem; overflow: auto;" data-theme-id="1" data-slug-hash="226a65c8f7d64615aabd45048d1d3b6d" data-default-tab="result" data-user="css-tricks" class='codepen'>See the Pen <a href="https://codepen.io/team/css-tricks/pen/226a65c8f7d64615aabd45048d1d3b6d/">BEM example</a> by CSS-Tricks (<a href="https://codepen.io/css-tricks">@css-tricks</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p>At first this syntax might seem slower than simply making a new class for each type of button, but this is not the case for several reasons we&#8217;ll cover.</p>
+<h3><a href="#why-should-we-consider-bem" aria-hidden="true" class="aal_anchor" id="why-should-we-consider-bem"><svg aria-hidden="true" class="aal_svg" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Why should we consider BEM?</h3>
+<ol>
+<li>If we want to make a new style of a component, we can easily see which modifiers and children already exist. We might even realize we don&#8217;t need to write any CSS in the first place because there is a pre-existing modifier that does what we need.</li>
+<li>If we are reading the markup instead of CSS, we should be able to quickly get an idea of which element depends on another (in the previous example we can see that <code>.btn__price</code> depends on <code>.btn</code>, even if we don&#8217;t know what that does just yet.)</li>
+<li>Designers and developers can consistently name components for easier communication between team members. In other words, BEM gives everyone on a project a declarative syntax that they can share so that they&#8217;re on the same page.</li>
+</ol>
+<p><a href="http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces">Harry Roberts identified</a> another key benefit of using a syntax like BEM when he writes about improving developer confidence:</p>
+<blockquote><p>This is the main reason we end up with bloated code bases, full of legacy and unknown CSS that we daren&#8217;t touch. We lack the confidence to be able to work with and modify existing styles because we fear the consequences of CSS&#8217; globally operating and leaky nature. Almost all problems with CSS at scale boil down to confidence (or lack thereof): People don&#8217;t know what things do any more. People daren&#8217;t make changes because they don&#8217;t know how far reaching the effects will be.</p></blockquote>
+<p>Likewise, <a href="http://philipwalton.com/articles/side-effects-in-css/">Philip Walton argues</a> that this problem can be fixed if enough developers stick to the principles of BEM: </p>
+<blockquote><p>While 100% predictable code may never be possible, it&#8217;s important to understand the trade-offs you make with the conventions you choose. If you follow strict BEM conventions, you will be able to update and add to your CSS in the future with the full confidence that your changes will not have side effects.</p></blockquote>
+<p>So if developers can work on a project more confidently, then they&#8217;re sure to make smarter decisions about how these visual components should be used. This methodology might not be a perfect cure for all these ailments, but it certainly gives developers a standard on which to write better, more maintainable code in the future.</p>
+<p>Another smart part of BEM is that <strong>everything is a class</strong> and <strong>nothing is nested</strong>. That makes CSS specificity very flat and low, which <a href="https://css-tricks.com/strategies-keeping-css-specificity-low/">is a good idea</a>. It means you won&#8217;t end up fighting with yourself over specificity.</p>
+<p>Let’s take a look at some of the problems with BEM&#8230;</p>
+<h3><a href="#problems-with-bem-css" aria-hidden="true" class="aal_anchor" id="problems-with-bem-css"><svg aria-hidden="true" class="aal_svg" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Problems with <del>BEM</del> CSS</h3>
+<p>Of course nobody will twist your arm if you break from BEM rules. You could still write a CSS selector like this:</p>
+<pre rel="CSS"><code class="language-css">.nav .nav__listItem .btn--orange {
+  background-color: green;
+}</code></pre>
+<p>That looks like it has parts of BEM going on, but it&#8217;s not BEM. It has nested selectors, and the modifier doesn&#8217;t even accurately describe what&#8217;s going on. If we did this, we&#8217;d be screwing up the specificity flatness that is so helpful with BEM.</p>
+<p>A block (such as <code>.nav</code>) should never override the styles of another block or modifier (such as <code>.btn--orange</code>). Otherwise this would make it almost impossible to read the HTML and understand what this component does; in the process we&#8217;re bound to greatly shake another developer&#8217;s confidence in the codebase. This goes for HTML, as well: what would you expect if you saw the following markup?</p>
+<pre rel="HTML"><code class="language-markup">&lt;a class="btn" href="https://css-tricks.com"&gt;
+  &lt;div class="nav__listItem"&gt;Item one&lt;/div&gt;
+  &lt;div class="nav__listItem"&gt;Item two&lt;/div&gt;
+&lt;/a&gt;</code></pre>
+<p>What&#8217;s probably going on here is that an element in a completely unrelated block has the code a developer needed, but the child elements don&#8217;t require a <code>.nav</code> class as the parent. This makes for an exceptionally confusing and inconsistent codebase which should be avoided at all costs. So we can summarize these problems by:</p>
+<ol>
+<li>Never overriding modifiers in an unrelated block.</li>
+<li>Avoiding making unnecessary parent elements when the child can exist quite happily by itself.</li>
+</ol>
+<h3><a href="#more-examples-of-bem-in-action" aria-hidden="true" class="aal_anchor" id="more-examples-of-bem-in-action"><svg aria-hidden="true" class="aal_svg" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>More examples of BEM in action</h3>
+<h4><a href="#accordion-demo" aria-hidden="true" class="aal_anchor" id="accordion-demo"><svg aria-hidden="true" class="aal_svg" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accordion demo</h4>
+<p data-height="563" style="height: 563px; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1rem 0; padding: 1rem; overflow: auto;" data-theme-id="1" data-slug-hash="EaJEBZ" data-default-tab="css" data-user="css-tricks" class='codepen'>See the Pen <a href="https://codepen.io/team/css-tricks/pen/EaJEBZ/">BEM Accordion</a> by CSS-Tricks (<a href="https://codepen.io/css-tricks">@css-tricks</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p>In this example there is one block, two elements and one modifier. Here we&#8217;ve can created an <code>.accordion__copy–open</code> modifier which lets us know we shouldn&#8217;t use it on another block or element.</p>
+<h4><a href="#navigation-demo" aria-hidden="true" class="aal_anchor" id="navigation-demo"><svg aria-hidden="true" class="aal_svg" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Navigation demo</h4>
+<p data-height="440" style="height: 440px; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1rem 0; padding: 1rem; overflow: auto;" data-theme-id="1" data-slug-hash="RNOMzJ" data-default-tab="css" data-user="css-tricks" class='codepen'>See the Pen <a href="https://codepen.io/team/css-tricks/pen/RNOMzJ/">BEM Menu</a> by CSS-Tricks (<a href="https://codepen.io/css-tricks">@css-tricks</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p></p>
+<p>This navigation demo has 1 block, 6 elements and 1 modifier. It&#8217;s even perfectly OK to create blocks without modifiers at all. At some point in the future a developer can always bolt on (or bind to) new modifiers so long as the block remains consistent.</p>
+<h3><a href="#dislikes-of-bem" aria-hidden="true" class="aal_anchor" id="dislikes-of-bem"><svg aria-hidden="true" class="aal_svg" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dislikes of BEM</h3>
+<p>Perhaps you don&#8217;t like the double-underscores or double-dashes thing. Fine, use something else that is unique that you will consistently enforce.</p>
+<p>Here&#8217;s another sentiment:</p>
+<blockquote class="twitter-tweet" lang="en">
+<p>Not sure I&#39;m sold on BEM.&#10;&#10;.site-search&#10;.site-search__field&#10;.site-search&#8211;full&#10;&#10;Why not:&#10;&#10;.site-search&#10;.site-search input&#10;.site-search .full</p>
+<p>&mdash; Samuel Fine (@samuelfine) <a href="https://twitter.com/samuelfine/status/575645771334291456">March 11, 2015</a></p></blockquote>
+<p>Those <em>last</em> three selectors all have different specificity levels. They either require parents or not. Without any rules in place, they don&#8217;t <em>say</em> as much as the ones on top. </p>
+<p>Is it possible that this tiny, isolated example feels perfectly fine to you and never ends up biting you in the butt? Perhaps. But the more CSS you have in a project, the more little things like this add up, the more specificity and complexity battles you go through. </p>
+<blockquote class="twitter-tweet" lang="en">
+<p>BEM sounds super useful if you don&#39;t know how HTML or CSS work.</p>
+<p>&mdash; Samuel Fine (@samuelfine) <a href="https://twitter.com/samuelfine/status/575646836251344897">March 11, 2015</a></p></blockquote>
+<p>Not to pick on Samuel here, but his sentiments are shared by a lot of people so it makes for a good example. They see BEM, and they just outright reject it. If you want to dislike BEM, that&#8217;s absolutely fine, but I think it would be hard to argue that <strong>having a set of rules</strong> that aid in understanding and assist in keeping CSS maintainable is a bad idea. </p>
+<p>In the SMACSS methodology, you’re likely to find a CSS classname with three letters. Modifiers then follow the module name with a hyphen:</p>
+<pre rel="CSS"><code class="language-css">/* Example Module */
+.btn { }
+
+/* Modifier of the btn class */
+.btn-primary { }
+
+/* Btn Module with State */
+.btn.is-collapsed { }</code></pre>
+<p>That&#8217;s just a different naming approach to the same kind of problem. It’s pretty similar, but you’re just being more specific about dependencies and keeping specificity flatter.</p>
+<p>In <a href="http://oocss.org/">OOCSS</a>, blocks are similarly generic. </p>
+<pre rel="CSS"><code class="language-css">/* Example Module */
+.mod { }
+
+/* Part of Module */
+.inner { }
+
+/* Talk Module */
+.talk { }
+
+/* Variation of part inside Module */
+.talk .inner { }</code></pre>
+<p>So you would use multiple classes in the HTML for variations. The inside part isn&#8217;t named like it has a dependency, so it is less clear but potentially more reusable. BEM would do <code>.mod__inner</code> and <code>.mod--talk</code> and <code>.mod--talk__inner</code>.</p>
+<p>These are just variations on methodology. Remember that nobody is twisting your arm here, these are self-imposed rules where the value comes from following them.</p>
+<h3><a href="#sass-and-bem" aria-hidden="true" class="aal_anchor" id="sass-and-bem"><svg aria-hidden="true" class="aal_svg" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sass and BEM</h3>
+<p>For those of you writing Sass and enjoy nesting as a way of scoping styles, you can still author in a nested format, but get CSS that isn&#8217;t nested, with <code>@at-root</code>:</p>
+<pre rel="SCSS"><code class="language-scss">.block {
+  @at-root #{&amp;}__element {
+  }
+  @at-root #{&amp;}--modifier {
+  }
+}</code></pre>
+<p>Gets you:</p>
+<pre rel="CSS"><code class="language-css">.block {
+}
+.block__element {
+}
+.block--modifier {
+}</code></pre>
+<p>And you can get as abstract as you want! Check out Danield Guillan&#8217;s <a href="https://github.com/danielguillan/bem-constructor">BEM Constructor</a> or Anders Schmidt Hansen&#8217;s <a href="https://codepen.io/andersschmidt/post/expressive-bem-with-sass-a-different-approach">Expressive BEM</a>.</p>
+<h3><a href="#summary" aria-hidden="true" class="aal_anchor" id="summary"><svg aria-hidden="true" class="aal_svg" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h3>
+<p>To wrap things up I think it&#8217;s fair to say that even though BEM won&#8217;t solve all our problems it is extraordinarily useful for constructing scalable and maintainable interfaces where everyone on the team should have a clear idea of how things can be improved. This is because a great deal of front end development is not just about the nice tricks that solve one little problem in the short term; we need agreements, promises and binding social contracts between developers so that our codebase can adapt over time. </p>
+<p>Generally I like to think of BEM as an answer to Nicolas Gallagher&#8217;s question: </p>
+<blockquote class="twitter-tweet" lang="en">
+<p>Replace &quot;can you build this?&quot; with &quot;can you maintain this without losing your minds?&quot;</p>
+<p>&mdash; Nicolas Gallagher (@necolas) <a href="https://twitter.com/necolas/status/360170108028600320">July 24, 2013</a></p></blockquote>
+<p></p>
+<h3><a href="#further-reading" aria-hidden="true" class="aal_anchor" id="further-reading"><svg aria-hidden="true" class="aal_svg" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Further reading</h3>
+<ul>
+<li><a href="https://en.bem.info/">The BEM project website</a></li>
+<li><a href="http://philipwalton.com/articles/side-effects-in-css/">Side effects in CSS</a></li>
+<li><a href="http://webuild.envato.com/blog/chainable-bem-modifiers/">Chaining BEM modifiers</a></li>
+<li><a href="http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/">BEM principles</a></li>
+<li><a href="http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces">More transparent UI code with namespaces</a></li>
+</ul>
+</div>
+</article>
+</main>
+<div class="entry-unrelated sidebar">
+<div id="all-modules">
+<div id="scroll-ad-position"></div>
+<div id="sticky-sidebar-stuff">
+<div class="fem-conditional-message">
+<div class="fem-ad fem-sidebar-ad">
+<div class="fem-header">
+<div class="fem-header-inner">
+<div class="fem-learning-partner">
+Our Learning Partner
+</div>
+<a href="https://frontendmasters.com/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar"><img src="https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1578251803/FEM-sidebar-Generic_dipjef.png" alt="Frontend Masters logo" class="fem-logo" /></a>
+<div class="fem-title">
+Frontend Masters
+</div>
+</div>
+</div>
+<div class="fem-message">
+<h4>Need front-end development training?</h4>
+<p><a href="https://frontendmasters.com/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">Frontend Masters</a> is the best place to get it. They have courses on all the most important front-end technologies, from <a href="https://frontendmasters.com/learn/react/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">React</a> to <a href="https://frontendmasters.com/learn/css/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">CSS</a>, from <a href="https://frontendmasters.com/learn/vue/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">Vue</a> to <a href="https://frontendmasters.com/learn/d3-js/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">D3</a>, and beyond with <a href="https://frontendmasters.com/learn/node-js/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">Node.js</a> and <a href="https://frontendmasters.com/learn/fullstack/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">Full Stack</a>.</p>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+<div class="related-ads-comments-wrap">
+<div class="related-ads-comments">
+<div class="end-of-article-ads">
+<div class="bsap-doubles side-by-side">
+<div id="bsap_1250418" class="bsarocks bsap_3469a2a501a9e18091036aa0c89f9dcb"></div>
+</div>
+<div class="fem-conditional-message">
+<div class="fem-ad fem-footer-ad">
+<div class="fem-header">
+<div class="fem-header-inner">
+<a href="https://frontendmasters.com/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar"><img src="https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1578251803/FEM-footer-Generic_fgvhuc.png" alt="Frontend Masters logo" class="fem-logo-large" /></a>
+</div>
+</div>
+<div class="fem-message">
+<div>
+<h4>Need front-end development training?</h4>
+<p><a href="https://frontendmasters.com/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">Frontend Masters</a> is the best place to get it. They have courses on all the most important front-end technologies, from <a href="https://frontendmasters.com/learn/react/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">React</a> to <a href="https://frontendmasters.com/learn/css/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">CSS</a>, from <a href="https://frontendmasters.com/learn/vue/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">Vue</a> to <a href="https://frontendmasters.com/learn/d3-js/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">D3</a>, and beyond with <a href="https://frontendmasters.com/learn/node-js/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">Node.js</a> and <a href="https://frontendmasters.com/learn/fullstack/?utm_source=css-tricks&utm_medium=website&utm_campaign=css-tricks-tags-sidebar">Full Stack</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="respond-area">
+<h2 class="comments-title" id="comments">
+<span>Comments</span>
+</h2>
+<ol class="commentlist" id="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-1593597">
+<div class="comment-wrap" id="comment-1593597">
+<div class="comment-author-wrap">
+<div class="comment-author">Gareth</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593597"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T06:28:53-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I&#8217;m with Samuel on this one, I don&#8217;t like it.</p>
+<p>I understand the pros and cons, but for me the cons outweigh the pros.</p>
+<p>Sometimes we&#8217;ll add a prefix to a class name so the relationship between things is obvious, i.e:</p>
+<p>.form<br />
+.form-fieldset<br />
+.form-text</p>
+<p>instead of</p>
+<p>.form<br />
+.form fieldset<br />
+.form input[type=text]</p>
+<p>But that&#8217;s as far as we take it. This idea behind dashes and underscores is kind of messy and confusing to me.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593610">
+<div class="comment-wrap" id="comment-1593610">
+<div class="comment-author-wrap">
+<div class="comment-author">Manny Fleurmond</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593610"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T07:08:54-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Yeah, the dashes and underscores look wierd</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593621">
+<div class="comment-wrap" id="comment-1593621">
+<div class="comment-author-wrap">
+<div class="comment-author">Fesh</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593621"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T08:34:30-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>For me, it seems to make it much easier to look at one element and tell where all (or at least a good solid chunk) of its styling is coming from.</p>
+<p>In the <code>.form-fieldset</code> example above, what if I want a specialized <code>fieldset</code> in a <code>form</code> that&#8217;s green? Now I have <code>.form-fieldset-green</code>&#8211;is this a green <code>fieldset</code> inside a <code>form</code> or is a green class on an element inside the <code>fieldset</code> inside the <code>form</code>?</p>
+<p>To me that distinction between elements through the <code>__</code> and modifiers through <code>--</code> works wonders. Now I know that <code>.form__fieldset--green</code> is green fieldset inside a <code>form</code> at quick glance.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593634">
+<div class="comment-wrap" id="comment-1593634">
+<div class="comment-author-wrap">
+<div class="comment-author">Porkons</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593634"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T14:20:41-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Agreed, let&#8217;s not go back to 2006 and have ourselves some huge bowls of class soup</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593637">
+<div class="comment-wrap" id="comment-1593637">
+<div class="comment-author-wrap">
+<div class="comment-author">Stefan Stevic</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593637"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T15:04:37-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>A while ago I stumbled upon this: <a href="https://github.com/rstacruz/rscss" rel="nofollow ugc">https://github.com/rstacruz/rscss</a>. Started using it and in my opinion its clearer then lots of underscores etc. And code looks cleaner too.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593660">
+<div class="comment-wrap" id="comment-1593660">
+<div class="comment-author-wrap">
+<div class="comment-author">Sergey</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593660"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T17:15:45-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Re-factoring is easier when using BEM. Without dashes and underscores, I bet you will HAVE to use nesting and with nesting you will run into cascading overwrites and uncertainty when you need to rename or remove classes. You also will not be able to reuse nested class that easily in a new place and you will have to re-factor again.<br />
+<a href="http://webuniverse.io/css-organization-naming-conventions-and-safe-extend-without-preprocessors/" rel="nofollow">Here</a> you can find more details on the topic with example.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593851">
+<div class="comment-wrap" id="comment-1593851">
+<div class="comment-author-wrap">
+<div class="comment-author">Jaison Justus</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593851"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-13T13:25:45-07:00">April 13, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I am a big fan of BEM.I am using BEM for all my office and personal projects from last two years.BEM never been a pain in the ass, especially when you work on large projects and large teams. the html looks clean, readable and easily understandable. helps in creating a perfect modularization for style sheets. Helps and tends you to write or develop more modular codes. with the help of sass or less you can make website authoring to a kickass experience.</p>
+<p>Most of my friends complained about the underscore and long names which look&#8217;s weird, need to type more, lot of bullshit blah blah. but the main benefit I see from my experience</p>
+<p>Understanble HTML document<br />
+Helps you in writing modular stylesheet<br />
+Easy stylesheet maintenance<br />
+BEM make you think webpage as composition of components<br />
+which helps in creating reusable stylesheets<br />
+BEM improves readability in javascript code while dealing with class names.</p>
+<p>My biggest benefit that I got from BEM is, it trained me a lot to thinking in modular way. not only css,but also in programming. I can feel the change and the advantages that i gained.I don&#8217;t how to explain it, yeah.. its true.</p>
+<p>Give it a try.</p>
+<p>Peace</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1593598">
+<div class="comment-wrap" id="comment-1593598">
+<div class="comment-author-wrap">
+<div class="comment-author">David</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593598"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T06:39:30-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>SCSS and BEM works for me, I would normally write something like:</p>
+<pre><code>// SCSS
+.block {
+  background-color: white;
+
+  &amp;--active {
+    background-color: gray;
+  }
+
+  &amp;__element {
+    color: red;
+
+    &amp;--active {
+      color: blue;
+    }
+  }
+
+  &amp;__another-element {
+    background-color: red;
+
+    &amp;--active {
+      background-color: blue;
+    }
+  }
+}
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-1593658">
+<div class="comment-wrap" id="comment-1593658">
+<div class="comment-author-wrap">
+<div class="comment-author">Jeremy Mouton</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593658"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T15:38:55-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Question:</p>
+<p>What if you have&#8230;</p>
+<pre><code>.block {
+  &amp;__title {
+    color: red;
+  }
+}
+
+.unrelated-block {
+  &amp;__title {
+    color: green;
+  }
+}
+</code></pre>
+<p>&#8230;and need to CTRL+F for .block__title? Wouldn&#8217;t it make more sense for all classes to be easily searchable? Nesting looks cleaner, but I think there&#8217;s a definite drawback in not being able to CTRL+F for something inside the codebase.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593659">
+<div class="comment-wrap" id="comment-1593659">
+<div class="comment-author-wrap">
+<div class="comment-author">Mike McGranahan</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593659"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T15:48:36-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>BEM (and other component methodologies) promote a one-component-per-file approach. So finding stuff begins with opening the file for that component (Ctrl-P or Ctrl-T or whatever Navigate-to-File shortcut your editor has). This is great because it immediately reduces the scope of your search. If the file is too big to visually scan, you simply Ctrl-F for &amp;__title.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593661">
+<div class="comment-wrap" id="comment-1593661">
+<div class="comment-author-wrap">
+<div class="comment-author">David</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593661"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T17:24:19-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>@Jeremy &#8211; @Mike summed it up pretty well. Being that the block has been named correctly and your file structure is logical you won&#8217;t struggle to find what you need. I had the same worry before but haven&#8217;t looked back since. Choose a file structure that suits you and the project best, and use CTRL + SHIFT + F in Sublime to find a class quickly across multiple .scss files. Maps can help too.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593662">
+<div class="comment-wrap" id="comment-1593662">
+<div class="comment-author-wrap">
+<div class="comment-author">Jeremy Mouton</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593662"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T18:24:25-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Thanks guys. That makes sense.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1593600">
+<div class="comment-wrap" id="comment-1593600">
+<div class="comment-author-wrap">
+<div class="comment-author">Alex Bondarev</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593600"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T06:45:42-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>The lates Sass version supports BEM in the following way:</p>
+<pre><code>.block {
+    &amp;__element {
+       //some styles here
+    }
+
+    &amp;--mod {
+       //some styles here
+    }
+}
+</code></pre>
+<p>Which would result in</p>
+<pre><code>.block {
+    //some styles here
+}
+.block--mod {
+   //some styles here
+}
+.block__element {
+   //some styles here
+}
+</code></pre>
+<p>You can see it online here &#8211; <a href="http://sassmeister.com/gist/fe753a8228da9ed45136" rel="nofollow ugc">http://sassmeister.com/gist/fe753a8228da9ed45136</a></p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593707">
+<div class="comment-wrap" id="comment-1593707">
+<div class="comment-author-wrap">
+<div class="comment-author">Steve Schrab</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593707"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-06T13:45:56-07:00">April 6, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>The same syntax would work for LESS as well. In case any LESS users were curious.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1593601">
+<div class="comment-wrap" id="comment-1593601">
+<div class="comment-author-wrap">
+<div class="comment-author">Andrey Kuzmin</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593601"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T06:45:43-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>There is no need in <code>@at-root #{&amp;}__element</code>, because <code>&amp;__element</code> is also working in sass.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1593602">
+<div class="comment-wrap" id="comment-1593602">
+<div class="comment-author-wrap">
+<div class="comment-author">skube</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593602"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T06:48:16-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I didn&#8217;t like the verbose look of BEM at first but it&#8217;s amazing how quickly I got over it. It&#8217;s easier for me to understand structure now glancing at BEM CSS and it helps coming up with naming too.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1593603">
+<div class="comment-wrap" id="comment-1593603">
+<div class="comment-author-wrap">
+<div class="comment-author">Loïc Goyet</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593603"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T06:51:05-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Personnaly I love this : <a href="https://github.com/rstacruz/rscss" rel="nofollow ugc">https://github.com/rstacruz/rscss</a><br />
+it put a little bit deepness into selector but it correct something that bother me with bem : the length of the class title.</p>
+<p>I don&#8217;t know in what mesure confortable selector is important with deepness, but I do prefer it.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1593604">
+<div class="comment-wrap" id="comment-1593604">
+<div class="comment-author-wrap">
+<div class="comment-author">Caleb</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593604"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T06:52:58-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I&#8217;ve been using BEM on my last few projects and I think it works well. The only thing I&#8217;ve done differently is switch up the underscores and dashes since I prefer dashes and my CSS usually contains more elements than modifiers.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1593605">
+<div class="comment-wrap" id="comment-1593605">
+<div class="comment-author-wrap">
+<div class="comment-author">Charlotte Dann</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593605"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T06:54:53-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I love BEM. At first I shyed away from it because <em>it&#8217;s so ugly</em> but then I realised I can use mixins to abstract the formatting in css. In scss it&#8217;s more characters than it&#8217;s worth but with indented sass it&#8217;s kind of beautiful</p>
+<pre><code>.block
+  +e(child)
+    background: teal
+    +m(featured, important)
+      background: crimson
+</code></pre>
+<p>gracefully compiles into</p>
+<pre><code>.block__child {background: teal;}
+.block__child--featured, .block__child--important {background: crimson;}
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593607">
+<div class="comment-wrap" id="comment-1593607">
+<div class="comment-author-wrap">
+<div class="comment-author">Charlotte Dann</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593607"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T06:57:16-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Here are the mixins for those wandering</p>
+<pre><code>=e($elements...)
+  $selector: ()
+  @each $element in $elements
+    $selector: append($selector, unquote("&amp;__" + $element), comma)
+  #{$selector}
+    @content
+=m($modifiers...)
+  $selector: ()
+  @each $modifier in $modifiers
+    $selector: append($selector, unquote("&amp;--" + $modifier), comma)
+  #{$selector}
+    @content
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593644">
+<div class="comment-wrap" id="comment-1593644">
+<div class="comment-author-wrap">
+<div class="comment-author">Joshua Briley</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593644"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T04:55:17-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I like this method. Thanks, Charlotte.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593669">
+<div class="comment-wrap" id="comment-1593669">
+<div class="comment-author-wrap">
+<div class="comment-author">Sergey</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593669"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-04T07:15:37-07:00">April 4, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Hi guys, what do you think about following library which takes similar approach?<br />
+<a href="https://github.com/danielguillan/bem-constructor" rel="nofollow ugc">https://github.com/danielguillan/bem-constructor</a></p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593751">
+<div class="comment-wrap" id="comment-1593751">
+<div class="comment-author-wrap">
+<div class="comment-author">Matt West</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593751"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-08T06:33:36-07:00">April 8, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>This looks great! Thanks Charlotte :)</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593760">
+<div class="comment-wrap" id="comment-1593760">
+<div class="comment-author-wrap">
+<div class="comment-author">Markus</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593760"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-08T07:53:44-07:00">April 8, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>That looks great, thanks!</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1593606">
+<div class="comment-wrap" id="comment-1593606">
+<div class="comment-author-wrap">
+<div class="comment-author">balaphp</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593606"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T06:57:07-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>even i also don&#8217;t like this&#8230; may be we can go for camel case pattern.<br />
+.btn {}<br />
+/* Element that depends upon the block */<br />
+.btnPrice {}</p>
+<p>It will be help full to maintain the code pattern in js also&#8230;.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment byuser comment-author-philtune odd alt thread-odd thread-alt depth-1" id="li-comment-1593608">
+<div class="comment-wrap" id="comment-1593608">
+<div class="comment-author-wrap">
+<div class="comment-author">philtune</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593608"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T07:02:31-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Sass + BEM is a great reason to use BEM. Both seem to be meant for writing CSS that you DON&#8217;T GET CONFUSED BY.</p>
+<p>I guess my BEM is more just .parent-child and I use few modifiers, if ever. I have taken to writing high level layout blocks with a <code>l_</code> prefix like:</p>
+<pre><code>.l_header {
+    ...
+    &amp;-logo {}
+    &amp;-nav {}
+}
+
+.l_main {
+    ...
+    &amp;-hero {}
+    &amp;-content {}
+}
+
+.l_footer {}
+</code></pre>
+<p>BEM would be more like <code>.l_header__nav</code>, but I use dashes simply because if I want to select any element of the selector, dashes are better for double-clicking in text editors. (Underscores are word-characters so double-clicking will select the whole selector.) May be a weird reason to do that, but it helps my workflow.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1593609">
+<div class="comment-wrap" id="comment-1593609">
+<div class="comment-author-wrap">
+<div class="comment-author">Ben Frain</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593609"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T07:06:48-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I&#8217;ll chime in as, for my sins, I find CSS architecture eternally fascinating.<br />
+IMHO any approach that attempts to rationlise and enforce HTML classes and CSS selectors is better than no system. The more complicated the system/UI, the truer this becomes.<br />
+You can dislike BEM syntax (I&#8217;m not a fan) but the principles buy you far more than using no system at all (particularly at scale).<br />
+I also dislike the practice in Sass of using the parent selector to nest; you lose the one to one relationship with your markup (you can&#8217;t select a HTML class from Dev tools and search for the selector in a Sass codebase).<br />
+For very large complex UIs (and depending upon how you are building them) I have found different approaches more advantageous (I call my own <a href="http://benfrain.com/enduring-css-writing-style-sheets-rapidly-changing-long-lived-projects/" rel="nofollow">Enduring CSS</a>) than BEM, principally the use of a micro-namespace as a means of containment. I have found this in practice to be more robust, faster to iterate on, more understandable from a naming POV (that last point is entirely subjective though).<br />
+Whatever, you choose, however you adapt from what you begin with, to have some approach is infinitely better place to be than no defined approach at all!</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593612">
+<div class="comment-wrap" id="comment-1593612">
+<div class="comment-author-wrap">
+<div class="comment-author">Alex Bondarev</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593612"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T07:18:01-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Hey Ben, if you structure your Sass files so that each block gets its own folder and its own <code>scss</code> file, then searching by a selector becomes no longer necessary as looking at <code>.footer__copyright</code> will lead you to the <code>footer</code> folder at once without any searches, then it&#8217;s only a matter of finding <code>__copyright</code> in that particular file :)</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593618">
+<div class="comment-wrap" id="comment-1593618">
+<div class="comment-author-wrap">
+<div class="comment-author">ewfwefewfewewf</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593618"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T08:04:04-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>&#8220;you can’t select a HTML class from Dev tools and search for the selector in a Sass codebase).&#8221;</p>
+<p>Use sourcemaps instead&#8230;.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593619">
+<div class="comment-wrap" id="comment-1593619">
+<div class="comment-author-wrap">
+<div class="comment-author">Ben Frain</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593619"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T08:20:02-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>@Alex I&#8217;m using Sublime at present, I can double-click an HTML class in the DOM, CMD+C and then in Sublime CMD+R and CMD+V to find that Symbol project wide. Within a second it takes me straight to that selector in my Sass/CSS ready to type. I find that infinitely quicker than manually browsing for a component folder (I have in excess of 100 components).</p>
+<p>@ewfwefewfewewf &#8211; souremaps mean I need to edit in the browser. I prefer to edit in my text editor.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+
+</li>
+<li class="comment even depth-2" id="li-comment-1593696">
+<div class="comment-wrap" id="comment-1593696">
+<div class="comment-author-wrap">
+<div class="comment-author">Ricardo Zea</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593696"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-06T07:35:46-07:00">April 6, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>OFFTOPIC&#8211;</p>
+<p>@Ben Frain</p>
+<blockquote><p>
+souremaps mean I need to edit in the browser. I prefer to edit in my text editor.
+</p></blockquote>
+<p>Although you can <a href="https://developer.chrome.com/devtools/docs/workspaces" rel="nofollow">edit in the browser (Chrome)</a> and save the file , that&#8217;s a browser feature rather than a source maps feature.</p>
+<p>How I edit in my text editor and use source maps:</p>
+<p><a href="https://developer.chrome.com/devtools/docs/css-preprocessors" rel="nofollow">Enable source maps (Chrome)</a>.<br />
+View the line a specific rule is located in the source/preprocessed file.<br />
+Edit.</p>
+<p>If you use Sublime Text you don&#8217;t have to &#8220;find&#8221; that rule, just press <code>CTRL+G</code> (Windows) and type the line number.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1 featured" id="li-comment-1593611">
+<div class="comment-wrap" id="comment-1593611">
+<div class="comment-author-wrap">
+<div class="comment-author">Jonathan Snook</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593611"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T07:12:11-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>To clarify your point about SMACSS, if <code>.callout</code> is a variant of <code>.module</code>, it should be named <code>.module-callout</code>.</p>
+<p>There is very little difference between BEM and SMACSS. In SMACSS, it talks of modules, sub-modules, and sub-components. These map directly to blocks, modifiers, and elements.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1593613">
+<div class="comment-wrap" id="comment-1593613">
+<div class="comment-author-wrap">
+<div class="comment-author">Brendan</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593613"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T07:21:35-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Is there a single developer here who has actually used BEM on a project and not bought into it? its easy to dismiss it because it &#8216;looks funny&#8217; or you &#8216;dont like the __ or &#8211;&#8216; but thats just left over thinking from the &#8216;best practices&#8217; which we already know are not necessarily best at all. The bigger the project and the more people contributing to it &#8211; the bigger the benefits of something like BEM.</p>
+<p>As for Sam&#8217;s tweet, would you honestly feel comfortable joining a project and changing the .full rule? I highly doubt it, which will lead to higher specificity selectors and as the project grows &#8211; less consistency/maintainability. (which wastes time &amp; money and doesn&#8217;t look good)</p>
+<p>Give it a try, you might be surprised.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593665">
+<div class="comment-wrap" id="comment-1593665">
+<div class="comment-author-wrap">
+<div class="comment-author">BMJT</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593665"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-04T04:49:11-07:00">April 4, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Exactly, once you forgo any initial concerns and actually start using this approach on a project it&#8217;s amazing how useful it becomes, and how strange not using it seems.</p>
+<p>I challenge any naysayers to give it a go on a project, I think you&#8217;ll be surprised at how it changes the way you see your CSS. It&#8217;s almost indispensable once you get your head around it.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593818">
+<div class="comment-wrap" id="comment-1593818">
+<div class="comment-author-wrap">
+<div class="comment-author">Jaakko Saarenketo</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593818"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-10T07:33:53-07:00">April 10, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>This. After couple of projects with BEM (and SASS) I realized that there had been significantly less issues with classnames and conflicts. It&#8217;s just one of those things that kind of silently grew on me.</p>
+<p>One think I like about it is that I can safely use generic words (block, area, container) as BEM -element names. It really speeds up the development when I don&#8217;t have to think new names that much.</p>
+<p>And, like many have said here, the @at-root can be removed with new SASS version. Like this:</p>
+<pre><code>.lander {
+    &amp;__container {
+        @extend %container;
+    }
+    &amp;__area {
+        margin-bottom: 24px;
+    }
+}
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1593614">
+<div class="comment-wrap" id="comment-1593614">
+<div class="comment-author-wrap">
+<div class="comment-author">Roikles</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593614"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T07:21:43-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Great write up on BEM. I see that there are mixed opinions on it whicvh is great and reflects the expressiveness of css.</p>
+<p>I find BEM to be both scalable and readable (which is why we use it). At first we used it purely to identify parent-child relationships and I struggled to find a use for modifiers at all but the more we used it the more we realised that used correctly you can build extremely flexible and lean architecture!</p>
+<p>If anyone is interested I wrote a little WordPress script to create dynamic BEM menus and (if you like BEM) I&#8217;m sure you will appreciate how much easier it is to create complicated multi level navigation with BEM syntax rather than <code>.menu-name li &gt; ul &gt; li{}</code>.</p>
+<p>If you have never used BEM before it serves as a practical usage example:</p>
+<p><a href="https://github.com/roikles/Wordpress-Bem-Menu" rel="nofollow ugc">https://github.com/roikles/Wordpress-Bem-Menu</a></p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1593615">
+<div class="comment-wrap" id="comment-1593615">
+<div class="comment-author-wrap">
+<div class="comment-author">Martijn</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593615"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T07:29:25-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Too verbose, and looking too weird. Intermixing underscores with double dashes with single dashes with camelCaps. No thank you sir. Just using single dashes for inheritance AND sublevel elements works absolutely fine, doesn&#8217;t look weird or verbose, and doesn&#8217;t invite to write selectors that are too specific.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1 featured" id="li-comment-1593616">
+<div class="comment-wrap" id="comment-1593616">
+<div class="comment-author-wrap">
+<div class="comment-author">Anders Schmidt Hansen</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593616"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T07:44:50-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Thanks for a great article Joe, Robin and the bunch.</p>
+<p>In my experience it depends a lot on the complexity of a given project, personal preference (my mental model) and the team I&#8217;m in.</p>
+<p>Some projects are too small (not very complex) to make sense using a BEM-ish approach, while other projects that require high modularization have, in my experience, benefited greatly from BEM.</p>
+<p>In the case of the startup team I&#8217;m a part of, it just makes it easier to discuss and understand our code when things are very component-based and follows BEM. Well, the <strong>&#8220;Roberts meets Gallagher meets Snook meets our own blend&#8221;</strong> version of BEM, that is.</p>
+<p>For us, we need things to be very much like LEGOs &#8211; able to move around independently, be removed or added easily &#8211; since we need to iterate quickly based on customer feedback and user testing results. BEM helps us a lot with that.</p>
+<p>Truth be told, when I first saw BEM I was not very convinced, but after trying it out I began to really enjoy it. Maybe it&#8217;s like React&#8217;s <strong>&#8220;give it five minutes&#8221;</strong>.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1593622">
+<div class="comment-wrap" id="comment-1593622">
+<div class="comment-author-wrap">
+<div class="comment-author">Neal G</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593622"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T08:38:34-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>All of the benefits of BEM make sense to me and I like it. My biggest complaint with it is the classnames get really really long. Especially the deeper you get in the module.</p>
+<p>For instance assume the following HTML/CSS:</p>
+<p>.accordion<br />
+.accordion__title<br />
+.accordion__title__icon</p>
+<p>And then let&#8217;s say I want a modifier on .accordion__title__icon &#8211;</p>
+<p>class=&#8221;accordion__title__icon accordion__title__icon&#8211;facebook&#8221;</p>
+<p>I realize that we could shorten the name of the class, but that sort of defeats the purpose of making everything easy for other developers to quickly understand what&#8217;s going on.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593627">
+<div class="comment-wrap" id="comment-1593627">
+<div class="comment-author-wrap">
+<div class="comment-author">Andrew H</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593627"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T09:57:47-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>With BEM you should probably avoid using code like &#8220;accordion__title__icon accordion__title__icon–facebook&#8221;.</p>
+<p>You&#8217;d be better off making &#8216;accordion&#8217; and &#8216;icon&#8217; as separate components. Then just combining them.</p>
+<pre><code>.icon {}
+.icon--facebook {}
+
+.accordion {}
+.accordion__title {}
+.accordion__icon { /* CSS specific to an icon only when in an accordion */}
+</code></pre>
+<p>This has the advantage of each is useable elsewhere in your site without needing the other. The goal is to abstract each piece so it can be used independently elsewhere.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593642">
+<div class="comment-wrap" id="comment-1593642">
+<div class="comment-author-wrap">
+<div class="comment-author">Alex Bondarev</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593642"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T00:46:44-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Hey Neal, I agree with @Andrew H here in that you usually don&#8217;t need to nest so deep. If you have an element inside of an element then the top-most element can probably be a separate block. I once wrote an article about <a href="http://alexbondarev.com/bem-elements-and-their-elements/" rel="nofollow">BEM mixins</a>, if you are interested, please take a look.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593670">
+<div class="comment-wrap" id="comment-1593670">
+<div class="comment-author-wrap">
+<div class="comment-author">Sergey</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593670"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-04T07:39:39-07:00">April 4, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I agree with guys above. However I don&#8217;t like that pattern of specifying base class together with modifier class, it is really redundant (<code>class=”accordion__title__icon accordion__title__icon–facebook”</code>).<br />
+<a href="http://webuniverse.io/css-organization-naming-conventions-and-safe-extend-without-preprocessors/" rel="nofollow">Here</a> you can learn about a simple workaround.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1593623">
+<div class="comment-wrap" id="comment-1593623">
+<div class="comment-author-wrap">
+<div class="comment-author">Mike</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593623"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T08:41:12-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I&#8217;m fine with enforcing consistency and having a naming convention but the dual underscores looks horrible, especially when combined with single/double hyphens.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593635">
+<div class="comment-wrap" id="comment-1593635">
+<div class="comment-author-wrap">
+<div class="comment-author">Mike McGranahan</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593635"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T14:25:43-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>It&#8217;s an oft-repeated misconception that BEM specifically requires double underscores or dashes. That&#8217;s their default recommendation, in order to support hyphen-separated names, e.g. <code>.menu-button__submit-icon</code>. But it&#8217;s valid to adopt a Pascal-cased approach e.g. <code>.menuButton_submitIcon</code>. See the examples in their <a href="https://en.bem.info/method/definitions/#naming-for-independent-css-classes" rel="nofollow">docs</a>.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593666">
+<div class="comment-wrap" id="comment-1593666">
+<div class="comment-author-wrap">
+<div class="comment-author">BMJT</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593666"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-04T04:53:46-07:00">April 4, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I suggest you read &#8216;Modern CSS Architecture and Front-End Development&#8217; by Harry Roberts from the Smashing Book #4.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1593624">
+<div class="comment-wrap" id="comment-1593624">
+<div class="comment-author-wrap">
+<div class="comment-author">bbrewer97202</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593624"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T09:05:56-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>If you like the concepts of BEM but not the syntax, there are other options, like SUIT: <a href="https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md" rel="nofollow ugc">https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md</a></p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1593625">
+<div class="comment-wrap" id="comment-1593625">
+<div class="comment-author-wrap">
+<div class="comment-author">Nadya</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593625"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T09:13:38-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I take things one further. I use namespaces in my CSS.</p>
+<p>Harry shows some of the benefits of it here: (has Harry ever done a guest blog here? He should. Try to get him to. )<br />
+<a href="http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/" rel="nofollow ugc">http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/</a></p>
+<p>I only make one amendment. I use &#8216;.namespace-block-element&#8211;modifier&#8217; because underscores are to easy to miss.</p>
+</div>
+<div class="comment-actions">
+ <div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1593629">
+<div class="comment-wrap" id="comment-1593629">
+<div class="comment-author-wrap">
+<div class="comment-author">schwoortz</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593629"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T10:37:15-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Seems like the first &#8220;C&#8221; in CSS is the most dreaded thing&#8230; :-)</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-1593633">
+<div class="comment-wrap" id="comment-1593633">
+<div class="comment-author-wrap">
+<div class="comment-author">dhdhdhdhd</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593633"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T13:11:14-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Rightfully so, since you can&#8217;t stop the cascade.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1593630">
+<div class="comment-wrap" id="comment-1593630">
+<div class="comment-author-wrap">
+<div class="comment-author">Sergey Belov</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593630"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T12:48:24-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>For those of you who don&#8217;t like to write long CSS class names. Stop doing it by hand, try BH template engine for this: <a href="https://bem.github.io/bh/" rel="nofollow ugc">http://bem.github.io/bh/</a></p>
+<p>This template code:</p>
+<pre><code>bh.match('form', function(ctx, json) {
+    ctx.tag('form');
+    ctx.attr('method', json.method);
+    ctx.attr('action', json.url);
+});
+
+bh.match('form__input', function(ctx, json) {
+    ctx.tag('input');
+    ctx.attr('type', 'text');
+    ctx.attr('name', json.name);
+    ctx.attr('value', json.value);
+});
+
+bh.match('form__masked-input', function(ctx, json) {
+    ctx.tag('input');
+    ctx.attr('type', 'password');
+    ctx.attr('name', json.name);
+    ctx.attr('value', json.value);
+});
+
+bh.match('form__submit', function(ctx, json) {
+    ctx.tag('input');
+    ctx.attr('type', 'submit');
+    ctx.attr('name', json.name);
+    ctx.attr('value', json.text);
+});
+</code></pre>
+<p>applied to this json:</p>
+<pre><code>{
+    block: 'form',
+    method: 'post',
+    url: '/post-data',
+    content: [
+        {elem: 'input', name: 'login', value: 'arikon'},
+        {elem: 'masked-input', name: 'password'},
+        {elem: 'submit', text: 'Log in'}
+    ]
+}
+</code></pre>
+<p>will give you this html:</p>
+<pre><code>&lt;form class="form" method="post" action="/post-data"&gt;
+&lt;input class="form__input" type="text" name="login" value="arikon"/&gt;
+&lt;input class="form__masked-input" type="password" name="password"/&gt;
+&lt;input class="form__submit" type="submit" value="Log in"/&gt;
+&lt;/form&gt;
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1593636">
+<div class="comment-wrap" id="comment-1593636">
+<div class="comment-author-wrap">
+<div class="comment-author">el generico</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593636"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T14:28:12-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>for the love of god i hope this doesn&#8217;t catch on.<br />
+its ugly as sin and feels like a time machine to 2004</p>
+<p>specificity is NOT your enemy if used correctly</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1593641">
+<div class="comment-wrap" id="comment-1593641">
+<div class="comment-author-wrap">
+<div class="comment-author">Alastair</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593641"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-02T19:46:59-07:00">April 2, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>All the comments about how &#8220;ugly&#8221; the double underscores is seems to be missing the point. Whether or not it&#8217;s ugly, BEM is certainly clear what the intentions are. Clarity and structure is the point not how pretty or ugly the markup and CSS is.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1593646">
+<div class="comment-wrap" id="comment-1593646">
+<div class="comment-author-wrap">
+<div class="comment-author">Rimantas</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593646"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T05:25:44-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>@Brendan, I did use it on the project and came to dislike it even more. It is abuse of CSS. One even may venture further and claim that it basically goes against some core principles of CSS.<br />
+It may have it&#8217;s place, but it is overused already.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593653">
+<div class="comment-wrap" id="comment-1593653">
+<div class="comment-author-wrap">
+<div class="comment-author">Mike McGranahan</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593653"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T10:58:09-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>First, kudos for trying it before judging it. However, I do strongly disagree that it BEM is abusive, or antithetical, to CSS. Can you expound on this strong viewpoint?</p>
+<p>CSS is a vague specification. It&#8217;s unique <a href="https://people.opera.com/howcome/2006/phd/" rel="nofollow">design goals</a> included compactness, device-agnosticism, and shared authority between publisher and user (which turned out to have little long-term importance). Nothing in BEM contradicts these tenets in any way. BEM merely adds &#8220;cooperative componentization&#8221; to CSS: rules are grouped together logically, and each group respects a common set of strict constraints on selector construction.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1593647">
+<div class="comment-wrap" id="comment-1593647">
+<div class="comment-author-wrap">
+<div class="comment-author">Gerhard Großmann</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593647"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T05:33:20-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Aside from the <code>ugly__syntax--conventions</code> (which can be changed) my biggest objection is that you have a chain of class names in your HTML, e. g. <code>class="btn btn--big btn--orange"</code></p>
+<p>This way you have a lot of variations which can be combined freely … but does this help to get a consistent style on your website? If you wouldn’t do classes that are named based on characteristics like size or color, but based on function, maybe suddenly there are considerably fewer meaningful combinations.</p>
+<p>And many of them could be done by giving a parent element a reasonable class. Why make the button bigger? Because the user has a touch device? Then give the body the class <code>.touchDevice</code> and many more elements can be adapted simultaneously. Yes that creates specificity, but as el generico wrote: It’s not your enemy if used correctly.</p>
+<p>If possible and not too confusing I try to group my classes in CSS so that I don’t have to define basic things repeatedly. Example:</p>
+<pre><code>btn, btn-deactivated, btn-colorAccent {
+/* styles for a simple button */ }
+
+btn-deactivated {
+/* styles for the deactivated button */ }
+
+btn-colorAccent {
+/* styles concerning the color */ }
+</code></pre>
+<p>This way I don’t have to write <code>class="btn btn-deactivated"</code> but <code>class="btn-deactivated"</code> is enough. What’s in the classname that’s in the style, btn and deactivated.</p>
+<p>I like my CSS and HTML short and concise. Class chains clearly aren’t my thing.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593671">
+<div class="comment-wrap" id="comment-1593671">
+<div class="comment-author-wrap">
+<div class="comment-author">Sergey</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593671"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-04T07:51:16-07:00">April 4, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Yey, finally I found another person with same view on the problem! I&#8217;m so happy now :) Please take a look at <a href="http://webuniverse.io/css-organization-naming-conventions-and-safe-extend-without-preprocessors/" rel="nofollow">my article</a> which describes another way to group modifier classes, using attribute selectors. I wonder what you think.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593676">
+<div class="comment-wrap" id="comment-1593676">
+<div class="comment-author-wrap">
+<div class="comment-author">Gerhard Großmann</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593676"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-05T00:14:15-07:00">April 5, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Sergey, the idea to use the CSS selectors <code>[class^="block--"], [class*=" block--"]</code> is great. So you can also shorten your class lists in the CSS files.</p>
+<p>I’ve used something similar on a website that consisted of equivalent slides. With <code>[class^="slide-"]</code> I gave the base styles to all slides; while with <code>.slide-1</code>, <code>.slide-2</code>, <code>.slide-3</code> etc. I set individual properties like the background image.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+ </div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593703">
+<div class="comment-wrap" id="comment-1593703">
+<div class="comment-author-wrap">
+<div class="comment-author">Roman Paradeev</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593703"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-06T12:51:10-07:00">April 6, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Sure, you could write short and concise CSS in BEM methodology.</p>
+<p>One approach is to use preprocessors like SASS, so you can define your styleguide explicitly:</p>
+<pre><code>.btn-primary {
+  @extend .btn, .btn_state_deactivated, .btn_theme_color-accent
+}
+</code></pre>
+<p>You also can use full BEM stack and therefore avoid writing HTML by hand:</p>
+<pre><code>bh.apply({
+  block: 'btn',
+  mods: {
+    state: 'deactivated',
+    theme: 'color-accent'
+  }
+});
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1593648">
+<div class="comment-wrap" id="comment-1593648">
+<div class="comment-author-wrap">
+<div class="comment-author">Arnaud SIDER</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593648"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T05:55:01-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Couldn&#8217;t we use partial attribute selectors in our CSS too ?</p>
+<p>[class*=&#8211;disabled]{pointer-events:none;}</p>
+<p>Wouldn&#8217;t this cover any .block&#8211;disabled item.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593654">
+<div class="comment-wrap" id="comment-1593654">
+<div class="comment-author-wrap">
+<div class="comment-author">Mike McGranahan</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593654"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-03T11:14:27-07:00">April 3, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Fine question. The semantics of &#8220;disabled&#8221; might mean different things in different logical contexts. If we&#8217;re talking about an input field, disabled might mean &#8220;this control is read-only&#8221;. At the higher levels of abstraction that BEM blocks enable, we might have a listing of Product blocks in our Product Listings block. Such a Product might itself have a &#8220;disabled&#8221; state, which could mean &#8220;this product is unavailable for sale because it&#8217;s out of stock&#8221;. These two definitions of disabled are different, and will have different presentational implications.</p>
+<p>With your suggestion, we ignore and do not permit logical context in our code design. The word &#8220;disabled&#8221; is assumed to have one common meaning regardless of the context in which it&#8217;s applied. Ultimately, that discourages working at higher levels of abstraction because it&#8217;s cumbersome and painful to re-define the meaning of class names with the cascade. And without abstraction, we are forced to think about the entire front-end in terms of low-level HTML primitives, which wastes our limited cognitive capacity. In the worst case it exhausts that capacity, making the front-end indecipherable, unpredictable, and prone to regression.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1593697">
+<div class="comment-wrap" id="comment-1593697">
+<div class="comment-author-wrap">
+<div class="comment-author">Zach Alexander</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593697"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-06T08:10:51-07:00">April 6, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Was hoping the article would address my main gripes with BEM (which I otherwise love), which sometimes make me end up writing crazy long classess like <code>section-name__content__blurbs__blurb__title</code>:</p>
+<p><em>How do you decide what is a block?</em> Surely the entire page isn&#8217;t a single block, but how do you decide how to decompose it?<br />
+<em>How do you name elements whose only purpose is to make some CSS hack/feature work?</em> Imagine you have a <code>hero</code> element, which to the eye just contains a <code>headline</code> and a <code>tagline</code> as ostensible children. You&#8217;d love your classes to be <code>.hero</code>, <code>.hero__headline</code>, and <code>.hero__tagline</code>, but you needed a couple intermediate elements to accomplish some design goal (e.g. a wrapper, a pre-flexbox container for vertical centering &#8212; use your imagination). Those elements need styles, so are you forced to write <code>.hero__wrapper__container__headline</code>? Sometimes I do it, but I also think of it as a reductio ad absurdam for the whole convention. Other times I fudge and say &#8220;the wrapper element isn&#8217;t so much a child of the parent as part of the implementation of the block, so I&#8217;ll call it <code>.hero--wrapper</code> and reduce the length of the child selectors by one.&#8221; But this dilutes the naming convention.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593701">
+<div class="comment-wrap" id="comment-1593701">
+<div class="comment-author-wrap">
+<div class="comment-author">Nadya</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593701"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-06T11:13:43-07:00">April 6, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Namespaces. Need a hack to make code work? Prefix with &#8220;_&#8221;.<br />
+<a href="http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/" rel="nofollow ugc">http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/</a></p>
+<p>&#8220;How do you decide what is a block?&#8221;<br />
+Any element that is self-containing and can be decomposed. If you can move this anywhere on the page and have it function exactly how it does anywhere else. That is a block. Navigation, content area, side-bar, footer, header, carousel, etc.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1593702">
+<div class="comment-wrap" id="comment-1593702">
+<div class="comment-author-wrap">
+<div class="comment-author">Roman Paradeev</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593702"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-06T12:27:59-07:00">April 6, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Zack, there&#8217;s no reason to mirror nesting structure in element&#8217;s name. <code>Hero</code> layout could be something like this:</p>
+<pre><code>&lt;div class="hero"&gt;
+  &lt;div class="hero__wrapper"&gt;
+    &lt;div class="hero__container"&gt;
+      &lt;h1 class="hero__headline"&gt;Hey!&lt;/h1&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Unless you have elements with the same name on different nesting levels (which is not a great idea on its own) you still got a bulletproof protection against css selectors&#8217; collision.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593762">
+<div class="comment-wrap" id="comment-1593762">
+<div class="comment-author-wrap">
+<div class="comment-author">Marat</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593762"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-08T08:04:49-07:00">April 8, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Roman, I&#8217;ve never seen a problem to layout in more classic and semantic way:</p>
+<pre><code>&lt;section class="hero"&gt;
+  &lt;div&gt;
+    &lt;article&gt;
+      &lt;h1&gt;Hey!&lt;/h1&gt;
+    &lt;/article&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+<p>Therefore, LESS or SCSS code looks something like that:</p>
+<pre><code>.hero {
+  &gt; div {
+    .wrapper;
+  }
+  article {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
+</code></pre>
+<p>Clean and simple, isn&#8217;t?</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593812">
+<div class="comment-wrap" id="comment-1593812">
+<div class="comment-author-wrap">
+<div class="comment-author">grumpy</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593812"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-10T02:04:58-07:00">April 10, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>This layout could be easily broken by nested block, as block1&#8217;s selectors would affect block2 elements.</p>
+<pre><code>&lt;section class="block1"&gt;
+  &lt;article&gt;
+    &lt;h1&gt;Hey!&lt;/h1&gt;
+    &lt;section class="block2"&gt;
+      &lt;article&gt;
+        &lt;h2&gt;Ho!&lt;/h2&gt;
+      &lt;/article&gt;
+    &lt;section&gt;
+  &lt;/article&gt;
+&lt;/section&gt;
+</code></pre>
+<p>BEM naming may be not that clean and simple, but it guarantees bulletproof incapsulation.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1593708">
+<div class="comment-wrap" id="comment-1593708">
+<div class="comment-author-wrap">
+<div class="comment-author">Roman Paradeev</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593708"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-06T13:55:27-07:00">April 6, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I&#8217;ve forked the first pen to provide a brief example of BEM templating: <a href="https://codepen.io/sameoldmadness/pen/yyWXZm?editors=001" rel="nofollow ugc">http://codepen.io/sameoldmadness/pen/yyWXZm?editors=001</a></p>
+<p>It&#8217;s upsetting to see a lot of discussion in the comments around &#8220;proper&#8221; class names.</p>
+<p>After all, BEM is not telling you how to name your classes. Instead it is proposing a way to separate your code into atomic reusable components.</p>
+<p>Just look at the basic block declaration in BH syntax:</p>
+<pre><code>{
+  block: 'btn',
+  mods: {
+    color: 'blue',
+    size: 'big'
+  },
+  price: '$4',
+  text: 'Big button'
+}
+</code></pre>
+<p>It has nothing to do with html, css or js.</p>
+<p>But the block itself could contain logic implemented in all of these technologies (and even more).</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1593711">
+<div class="comment-wrap" id="comment-1593711">
+<div class="comment-author-wrap">
+<div class="comment-author">Mike</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593711"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-06T19:00:56-07:00">April 6, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>For the <code>.mod--talk__inner</code> example, I prefer keeping the modifiers on the block whenever possible. So, this would be:</p>
+<pre><code>.mod {}
+.mod__inner {}
+
+.mod--talk {
+  .mod__inner {}
+}
+</code></pre>
+<p>Otherwise, you&#8217;d need a new modifier class for each element of a block.</p>
+<p>I suppose this messes with specificity, but .mod&#8211;talk .mod__inner should have precedence anyway.</p>
+<p>But, I guess this brings up the question: Should elements be nested inside blocks?</p>
+<pre><code>.mod {
+  .mod__inner {}
+}
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-1593726">
+<div class="comment-wrap" id="comment-1593726">
+<div class="comment-author-wrap">
+<div class="comment-author">TJ Fogarty</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593726"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-07T09:27:32-07:00">April 7, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>You&#8217;re spot on with the first block of code &#8211; only nesting them inside a modifier, or as a separate modified class e.g. <code>.mod__inner--wide {}</code></p>
+<p>The following would be redundant, as <code>.mod__inner</code> is named in such a way that we already know it&#8217;s an element of <code>.mod</code>:</p>
+<pre><code>.mod {
+  .mod__inner {}
+}
+</code></pre>
+<p>You&#8217;re reducing the amount of fighting you&#8217;ll have to do with specificity as components develop.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1593723">
+<div class="comment-wrap" id="comment-1593723">
+<div class="comment-author-wrap">
+<div class="comment-author">Jonathan Cuthbert</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593723"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-07T08:27:27-07:00">April 7, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>First of all, I hope you are modularizing your CSS whether you use BEM or not. Secondly, take a look at your current projects. Do you often nest unrelated modules inside of your modules? If that&#8217;s the case then use the BEM approach. If not, use an approach that makes the HTML and CSS more readable.</p>
+<p>I wrote Title CSS as a way to easily locate module classes and create a scope for short descendant classes. <a href="https://github.com/cuth/Title-CSS" rel="nofollow ugc">https://github.com/cuth/Title-CSS</a></p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1593728">
+<div class="comment-wrap" id="comment-1593728">
+<div class="comment-author-wrap">
+<div class="comment-author">Tof</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593728"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-07T12:01:13-07:00">April 7, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I find that using &#8220;orange&#8221; as a class name in the example is really a bad idea.</p>
+<p>Because, of course you&#8217;ll have someone write a <code>.sidebar .orange { color: blue; }</code>, BEM or not.</p>
+<p>Why not use <code>.primary</code> or <code>.secondary</code> ?</p>
+<p><a href="https://css-tricks.com/semantic-class-names/" rel="nofollow">Here</a> is a good blogger explaining semantic css.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1593729">
+<div class="comment-wrap" id="comment-1593729">
+<div class="comment-author-wrap">
+<div class="comment-author">Steven</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593729"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-07T14:06:49-07:00">April 7, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I often get the feedback from the backend guys that using BEM creates much more work for them and the project manager doesn&#8217;t like to hear that. Their argument is that it is easier for them to output</p>
+<p>instead of</p>
+<p>&lt;</p>
+<p>form class=&#8221;signup__sidebar&#8221;&gt;</p>
+<p>etc.</p>
+<p>As the first variant is already coming out of the CMS just like that, but the second requires more coding work to get like that. And it is not just about the form, but any other plugins/extensions they use for the CMS.</p>
+<p>How should this be seen?</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1593730">
+<div class="comment-wrap" id="comment-1593730">
+<div class="comment-author-wrap">
+<div class="comment-author">Steven</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593730"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-07T14:09:21-07:00">April 7, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>In my example above variant one was:</p>
+<pre><code>&lt;form&gt;&lt;input class="error"&gt;&lt;/form&gt;
+</code></pre>
+<p>and the second was:</p>
+<pre><code>&lt;form class="signup__sidebar"&gt;&lt;input class="signup__sidebar--error"&gt;&lt;/form&gt;
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1593757">
+<div class="comment-wrap" id="comment-1593757">
+<div class="comment-author-wrap">
+<div class="comment-author">Gretch</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593757"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-08T07:37:24-07:00">April 8, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I just call it .butts, as in buttons.</p>
+<p>so it would be like,</p>
+<p>.butts {}</p>
+<p>.butts&gt;span:first-of-type {}</p>
+<p>.butts&gt;span:last-of-type {}</p>
+<p>I dunno why you would ever give children of these bad boys classes.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1593759">
+<div class="comment-wrap" id="comment-1593759">
+<div class="comment-author-wrap">
+<div class="comment-author">Marat</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593759"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-08T07:52:57-07:00">April 8, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>In my opinion, BEM is an absolute craziness and it makes HTML and CSS code bizarre.</p>
+<p>Okay, even if your project is very complicated with a lot of stuff delivered by many teams, so why don&#8217;t follow Web Components approach that keeps everything clear and simple? <a href="http://webcomponents.org/" rel="nofollow ugc">http://webcomponents.org/</a></p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-1593768">
+<div class="comment-wrap" id="comment-1593768">
+<div class="comment-author-wrap">
+<div class="comment-author">Sergey Belov</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593768"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-08T10:14:26-07:00">April 8, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Because of it is not supported by browsers. And polyfills are very slow.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1593774">
+<div class="comment-wrap" id="comment-1593774">
+<div class="comment-author-wrap">
+<div class="comment-author">Nick Beukema</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593774"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-08T12:33:08-07:00">April 8, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>So, if I were to follow this structure, would this be appropriate for a navigation element?</p>
+<pre><code>.navigation--list {}
+.navigation__small--list {}
+.navigation--list--item {}
+.navigation--list--item--link {}
+</code></pre>
+<p>And how much is too much? Say for example I have some small styled element in the link, like an icon, would that add a fourth layer? How far is too far when dealing with BEM? Can you go too far?</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-1593778">
+<div class="comment-wrap" id="comment-1593778">
+<div class="comment-author-wrap">
+<div class="comment-author">Sergey Belov</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593778"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-08T13:34:26-07:00">April 8, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>No.</p>
+<p>Correct code would be:</p>
+<pre><code>.navigation--list {} // list element
+.navigation--list__small {} // small modifier of list element
+.navigation--item {} // list item element
+.navigation--link {} // list item link element
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593786">
+<div class="comment-wrap" id="comment-1593786">
+<div class="comment-author-wrap">
+<div class="comment-author">David</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593786"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-09T01:03:42-07:00">April 9, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>@Sergey &#8211; You&#8217;ve got your elements and modifiers mixed up:</p>
+<pre><code>.block {}
+.block__element {}
+.block--modifier {}
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593787">
+<div class="comment-wrap" id="comment-1593787">
+<div class="comment-author-wrap">
+<div class="comment-author">David</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593787"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-09T01:11:02-07:00">April 9, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Try this:</p>
+<pre><code>.navigation {} // block
+.navigation__list {} // element
+.navigation__list--small {} // modifier of navigation__list
+.navigation__item {} // element
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593788">
+<div class="comment-wrap" id="comment-1593788">
+<div class="comment-author-wrap">
+<div class="comment-author">Sergey Belov</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593788"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-09T01:40:58-07:00">April 9, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Thanks David! I&#8217;m only good at canonical BEM naming:</p>
+<pre><code>block
+block__element
+block_modifier_modifier-value
+block__element_modifier_modifier-value
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593789">
+<div class="comment-wrap" id="comment-1593789">
+<div class="comment-author-wrap">
+<div class="comment-author">Marat</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593789"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-09T01:56:03-07:00">April 9, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>This thread perfectly reveals how developers couldn&#8217;t catch BEM conventions right.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1593792">
+<div class="comment-wrap" id="comment-1593792">
+<div class="comment-author-wrap">
+<div class="comment-author">Knappster</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593792"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-09T06:13:29-07:00">April 9, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I use my own system as I&#8217;m not a fan of the BEM class names. I get the whole single selector thing but I find it much quicker creating templates with shorter class names.</p>
+<p>Sub element class names always start with double underscore and modifiers with a single dash. I find it&#8217;s much easier to read in both the HTML and SCSS, for example:</p>
+<p>HTML:</p>
+<pre><code>&lt;div class="accordion"&gt;
+    &lt;div class="__header -red"&gt;
+        // Header content
+    &lt;/div&gt;
+    &lt;div class="__content"&gt;
+        // Blah blah
+    &lt;/div&gt;
+
+    &lt;div class="__header -green"&gt;
+        // Header content
+    &lt;/div&gt;
+    &lt;div class="__content"&gt;
+        // Blah blah
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>SCSS:</p>
+<pre><code>.accordion {
+    .__header {
+        &amp;.-red {
+            background-color: red;
+        }
+        &amp;.-green {
+            background-color: green;
+        }
+        &amp;.-blue {
+            background-color: blue;
+        }
+    }
+
+    .__content {
+        padding: 20px;
+    }
+}
+</code></pre>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-1593794">
+<div class="comment-wrap" id="comment-1593794">
+<div class="comment-author-wrap">
+<div class="comment-author">Mike McGranahan</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593794"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-09T06:45:25-07:00">April 9, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>I do something similar but with the child combinator in internal selectors. Otherwise, you expose yourself to risk of regressions and selector battles when composing components. E.g. if this Accordion ends up composing an ArticleBlurb, which may have its own __content, then the Accordion&#8217;s __content styles will be applied to the ArticleBlurb&#8217;s. This is easily addressed with the child combinator:</p>
+<pre><code>.accordion {
+    &gt; .__header { /* ... */ }
+
+    &gt; .__content { /* ... */ }
+}
+
+</code></pre>
+<p>You lose flexibility of adding arbitrary elements into the Accordion structure, but that&#8217;s a feature not a bug. A consistent structure makes components much easier to manage.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593797">
+<div class="comment-wrap" id="comment-1593797">
+<div class="comment-author-wrap">
+<div class="comment-author">Jonathan Cuthbert</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593797"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-09T07:44:25-07:00">April 9, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Knappster, I also do the same nesting style (along with Mike) but my naming convention is different.</p>
+<pre><code>.Accordion {
+
+    .header {
+
+        &amp;.isRed {
+            background-color: red;
+        }
+
+        &amp;.isGreen {
+            background-color: green;
+        }
+
+        &amp;.isBlue {
+            background-color: blue;
+        }
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
+</code></pre>
+<p>Since &#8220;Accordion&#8221; and every other module class starts with an uppercase class name, I&#8217;m free to name a descendant class with any lowercase name since classes are case sensitive.</p>
+<p>For more information on this naming convention: <a href="http://www.sitepoint.com/title-css-simple-approach-css-class-naming/" rel="nofollow ugc">http://www.sitepoint.com/title-css-simple-approach-css-class-naming/</a></p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1593801">
+<div class="comment-wrap" id="comment-1593801">
+<div class="comment-author-wrap">
+<div class="comment-author">Nick Beukema</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593801"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-09T10:29:35-07:00">April 9, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Keep in mind that we should also be focusing on the efficiency of our CSS. I would argue that efficiency should trump our ease of development when it comes down to it.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS" rel="nofollow ugc">https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS</a></p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1593803">
+<div class="comment-wrap" id="comment-1593803">
+<div class="comment-author-wrap">
+<div class="comment-author">Mike McGranahan</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593803"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-09T11:36:44-07:00">April 9, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Nick, I strongly disagree. &#8220;Premature optimization is the root of all evil.&#8221; There is generally far greater risk to a project from unorganized CSS than from unoptimized selectors. Is performance/efficiency something to be aware of and understand? Yes. But it should not be the primary focus. Optimize only when necessary. Unlike most programming languages, CSS is a particularly sensitive software technology in this regard, as it doesn&#8217;t provide strong abstraction mechanisms behind which one can hide gnarly optimizations.</p>
+<p>That said, there are other ways to optimize presentation than through selectors. Limit use of shadows and transparency. Prefer CSS3 transitions/animations to JavaScript ones. Concatenate stylesheets to reduce HTTP overhead.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1593795">
+<div class="comment-wrap" id="comment-1593795">
+<div class="comment-author-wrap">
+<div class="comment-author">Knapster</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1593795"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-09T07:06:40-07:00">April 9, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>Valid point, my example is a bit over simplified I think.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1594147">
+<div class="comment-wrap" id="comment-1594147">
+<div class="comment-author-wrap">
+<div class="comment-author">Amir Shabani</div> <div class="comment-time"><a href="https://css-tricks.com/bem-101/#comment-1594147"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2015-04-29T01:37:14-07:00">April 29, 2015</time></div>
+</div>
+<div class="comment-content">
+<p>As a new web designer &amp; developer it is useful for breakpoints for responsive design. Because codes are more cleaner.</p>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="comments-closed">
+This comment thread is closed. If you have important information to share, please <a href="/contact/">contact us</a>.
+</div>
+</section> <div class="related-posts">
+<div id='jp-relatedposts' class='jp-relatedposts'>
+</div> <div class="jetpack-sponsored-posts-message">
+<img src="https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1590422774/jetpack-logo_cegyqg.svg" alt="Jetpack Logo">
+<p>The related posts above were algorithmically generated and displayed here without any load on our servers at all, <a href="https://jetpack.com/support/related-posts/?aff=8638">thanks to Jetpack</a>.</p>
+</div>
+</div> </div>
+</div>
+ </div>
+<footer class="site-footer">
+<svg class="icon-logo-star" width="35px" height="35px" viewBox="0 0 362.62 388.52" data-spin-me="false">
+<path d="M156.58,239l-88.3,64.75c-10.59,7.06-18.84,11.77-29.43,11.77-21.19,0-38.85-18.84-38.85-40C0,257.83,14.13,244.88,27.08,239l103.6-44.74L27.08,148.34C13,142.46,0,129.51,0,111.85,0,90.66,18.84,73,40,73c10.6,0,17.66,3.53,28.25,11.77l88.3,64.75L144.81,44.74C141.28,20,157.76,0,181.31,0s40,18.84,36.5,43.56L206,149.52l88.3-64.75C304.93,76.53,313.17,73,323.77,73a39.2,39.2,0,0,1,38.85,38.85c0,18.84-12.95,30.61-27.08,36.5L231.93,194.26,335.54,239c14.13,5.88,27.08,18.83,27.08,37.67,0,21.19-18.84,38.85-40,38.85-9.42,0-17.66-4.71-28.26-11.77L206,239l11.77,104.78c3.53,24.72-12.95,44.74-36.5,44.74s-40-18.84-36.5-43.56Z" />
+</svg>
+<div class="footer-inside">
+<div class="footer-message-and-form">
+<p class="colophon">
+CSS-Tricks is created by <a href="https://chriscoyier.net">Chris</a> and a <a href="/about">team</a> of swell&nbsp;people.
+</p>
+<div class="footer-form-wrap">
+<form action="https://chriscoyier.us2.list-manage.com/subscribe/post?u=155f5a9ccc4e24c318130cace&amp;id=197f127a68" method="post" id="mc-embedded-subscribe-form">
+<h4>Keep up to date on web dev</h4>
+<p>with our hand-crafted weekly newsletter</p>
+<div class="footer-form">
+<label for="mce-EMAIL" class="screen-reader">Email Address</label>
+<input type="email" name="EMAIL" class="required email mailchimp-email-input" id="mce-EMAIL" placeholder="smart@cookie.com" required="">
+<input type="submit" value="Subscribe" name="Subscribe" id="mc-embedded-subscribe" class="button subscribe-button">
+</div>
+</form>
+</div> </div>
+<div class="link-grid">
+<div>
+<div>
+<h5>
+Tech
+</h5>
+<ul>
+<li><a href="https://wordpress.org/">WordPress</a> <span>(CMS)</span></li>
+<li><a href="/jetpack/">Jetpack</a> <span>(Search, Backup)</span></li>
+<li><a href="https://woocommerce.com/?aff=8638">WooCommerce</a> <span>(eCommerce)</span></li>
+<li><a href="https://localwp.com/">Local</a> <span>(Development)</span></li>
+</ul>
+</div>
+<div>
+<h5>Hosting</h5>
+<ul>
+<li><a href="https://share.getf.ly/k96n2f">Flywheel</a></li>
+</ul>
+</div>
+</div>
+<div>
+<div>
+<h5>Family</h5>
+<ul>
+<li><a href="https://codepen.io/">CodePen</a></li>
+<li><a href="https://shoptalkshow.com/">ShopTalk Show</a></li>
+</ul>
+</div>
+<div>
+<h5>Minisites</h5>
+<ul>
+<li><a href="https://serverless.css-tricks.com/">The Power of Serverless</a></li>
+<li><a href="https://conferences.css-tricks.com/">Upcoming Conferences</a></li>
+<li><a href="https://coding-fonts.css-tricks.com/">Coding Fonts</a></li>
+</ul>
+</div>
+</div>
+<div>
+<div>
+<h5>Contact</h5>
+<ul>
+<li><a href="/cdn-cgi/l/email-protection#c8bcada9a588abbbbbe5bcbaa1aba3bbe6aba7a5">Email</a></li>
+<li><a href="https://www.notion.so/csstricks/Sponsorship-Possibilities-cb5b33a3f6f64c239220547fe7965d78">Sponsorship Info</a></li>
+<li><a href="/guest-posting/">Guest Writing</a></li>
+</ul>
+</div>
+<div>
+<h5>Buy</h5>
+<ul>
+<li><a href="/shop/">Posters & Swag</a></li>
+<li><a href="/product/mvp-supporter/">Membership</a></li>
+</ul>
+</div>
+</div>
+<div>
+<div>
+<h5>Follow</h5>
+<ul>
+<li><a href="https://twitter.com/css">Twitter</a></li>
+<li><a href="https://www.instagram.com/real_css_tricks/">Instagram</a></li>
+<li><a href="https://www.youtube.com/user/realcsstricks">YouTube</a></li>
+<li><a href="https://codepen.io/team/css-tricks">CodePen</a></li>
+<li><a href="https://github.com/CSS-Tricks">GitHub</a></li>
+<li><a href="https://podcasts.apple.com/us/podcast/css-tricks-screencasts/id273881728">iTunes</a></li>
+<li><a href="/feed/">RSS</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<a href="#top-of-site" class="top-of-site-link" data-visible="false">
+<span class="screen-reader-text">Back to Top</span>
+<svg width="32" height="32" viewBox="0 0 100 100">
+<path fill="white" d="m50 0c-13.262 0-25.98 5.2695-35.355 14.645s-14.645 22.094-14.645 35.355 5.2695 25.98 14.645 35.355 22.094 14.645 35.355 14.645 25.98-5.2695 35.355-14.645 14.645-22.094 14.645-35.355-5.2695-25.98-14.645-35.355-22.094-14.645-35.355-14.645zm20.832 62.5-20.832-22.457-20.625 22.457c-1.207 0.74219-2.7656 0.57812-3.7891-0.39844-1.0273-0.98047-1.2695-2.5273-0.58594-3.7695l22.918-25c0.60156-0.61328 1.4297-0.96094 2.2891-0.96094 0.86328 0 1.6914 0.34766 2.293 0.96094l22.918 25c0.88672 1.2891 0.6875 3.0352-0.47266 4.0898-1.1562 1.0508-2.9141 1.0859-4.1133 0.078125z" />
+</svg>
+</a>
+</footer>
+<div class="jetpack-instant-search__widget-area" style="display: none">
+<div id="media_image-3" class="widget widget_media_image"><a href="https://jetpack.com/upgrade/search/?aff=8638"><img width="600" height="444" src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/09/Jetpack-Search-on-CSS-Tricks-Instant-Search.png?fit=600%2C444&amp;ssl=1" class="image wp-image-321694  attachment-full size-full jetpack-lazy-image" alt="" loading="lazy" style="max-width: 100%; height: auto;" data-lazy-srcset="https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/09/Jetpack-Search-on-CSS-Tricks-Instant-Search.png?w=600&amp;ssl=1 600w, https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/09/Jetpack-Search-on-CSS-Tricks-Instant-Search.png?resize=300%2C222&amp;ssl=1 300w" data-lazy-sizes="(min-width: 735px) 864px, 96vw" data-lazy-src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/09/Jetpack-Search-on-CSS-Tricks-Instant-Search.png?fit=600%2C444&amp;ssl=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" /></a></div><div id="jetpack-search-filters-5" class="widget jetpack-filters widget_search"> <div id="jetpack-search-filters-5-wrapper" class="jetpack-instant-search-wrapper">
+</div></div> </div>
+<link rel='stylesheet' id='jetpack_related-posts-css' href='https://c0.wp.com/p/jetpack/9.9.1/modules/related-posts/related-posts.css' type='text/css' media="not all" onload="this.media='all'" />
+
+<svg width="0" height="0" class="screen-reader">
+<defs>
+<linearGradient id="orange-to-pink" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#ff7a18" />
+<stop offset="40%" stop-color="#af002d" />
+<stop offset="100%" stop-color="#319197" />
+</linearGradient>
+<filter id="duotone_orange_pink">
+<feColorMatrix type="matrix" result="grayscale" values="1 0 0 0 0
+                  1 0 0 0 0
+                  1 0 0 0 0
+                  0 0 0 1 0">
+</feColorMatrix>
+<feComponentTransfer color-interpolation-filters="sRGB" result="duotone">
+<feFuncR type="table" tableValues="0.7411764706 0.9882352941"></feFuncR>
+<feFuncG type="table" tableValues="0.0431372549 0.7333333333"></feFuncG>
+<feFuncB type="table" tableValues="0.568627451 0.05098039216"></feFuncB>
+<feFuncA type="table" tableValues="0 1"></feFuncA>
+</feComponentTransfer>
+</filter>
+</defs>
+</svg>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>window._wca = window._wca || [];</script><script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://css-tricks.com/#organization","name":"CSS-Tricks","url":"https://css-tricks.com/","sameAs":["https://www.facebook.com/CSSTricks","https://www.instagram.com/real_css_tricks/","https://www.youtube.com/channel/UCADyUOnhyEoQqrw_RrsGleA","https://twitter.com/CSS"],"logo":{"@type":"ImageObject","@id":"https://css-tricks.com/#logo","inLanguage":"en-US","url":"https://i0.wp.com/css-tricks.com/wp-content/uploads/2019/06/akqRGyta_400x400.jpg?fit=%2C&ssl=1","contentUrl":"https://i0.wp.com/css-tricks.com/wp-content/uploads/2019/06/akqRGyta_400x400.jpg?fit=%2C&ssl=1","caption":"CSS-Tricks"},"image":{"@id":"https://css-tricks.com/#logo"}},{"@type":"WebSite","@id":"https://css-tricks.com/#website","url":"https://css-tricks.com/","name":"CSS-Tricks","description":"Tips, Tricks, and Techniques on using Cascading Style Sheets.","publisher":{"@id":"https://css-tricks.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://css-tricks.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://css-tricks.com/bem-101/#webpage","url":"https://css-tricks.com/bem-101/","name":"BEM 101 | CSS-Tricks","isPartOf":{"@id":"https://css-tricks.com/#website"},"datePublished":"2015-04-02T13:19:44+00:00","dateModified":"2016-03-09T14:08:53+00:00","description":"The following is a collaborative post by guest Joe Richardson, Robin Rendle, and a bunch of the CSS-Tricks staff. Joe wanted to do a post about BEM, which","breadcrumb":{"@id":"https://css-tricks.com/bem-101/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://css-tricks.com/bem-101/"]}]},{"@type":"BreadcrumbList","@id":"https://css-tricks.com/bem-101/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://css-tricks.com/"},{"@type":"ListItem","position":2,"name":"BEM 101"}]},{"@type":"Article","@id":"https://css-tricks.com/bem-101/#article","isPartOf":{"@id":"https://css-tricks.com/bem-101/#webpage"},"author":{"@id":"https://css-tricks.com/#/schema/person/bcdbaa27c31876e37a167ad950256dce"},"headline":"BEM 101","datePublished":"2015-04-02T13:19:44+00:00","dateModified":"2016-03-09T14:08:53+00:00","mainEntityOfPage":{"@id":"https://css-tricks.com/bem-101/#webpage"},"wordCount":1591,"publisher":{"@id":"https://css-tricks.com/#organization"},"articleSection":["Article"],"inLanguage":"en-US"},{"@type":"Person","@id":"https://css-tricks.com/#/schema/person/bcdbaa27c31876e37a167ad950256dce","name":"Robin Rendle","image":{"@type":"ImageObject","@id":"https://css-tricks.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/746ce4be4b792a706e1ca37105b09cf0?s=96&d=retro&r=pg","contentUrl":"https://secure.gravatar.com/avatar/746ce4be4b792a706e1ca37105b09cf0?s=96&d=retro&r=pg","caption":"Robin Rendle"},"description":"Writer, designer, type nerd.","sameAs":["https://twitter.com/robinrendle"],"url":"https://css-tricks.com/author/robinrendle/"}]}</script><script defer src='https://stats.wp.com/s-202131.js' id='woocommerce-analytics-js'></script><script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script><script>
+  var articleYear = 2015;
+  var articleAuthor = "223806";
+  var articleType = "post";
+</script><script async src="//assets.codepen.io/assets/embed/ei.js"></script><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><script>window.addEventListener("load",function(){document.querySelectorAll("link").forEach(function(e){"not all"===e.media&&(e.media="all")});var e=document.getElementById("jetpack-boost-critical-css");e&&(e.media="not all")});</script><script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script><script src='https://c0.wp.com/p/jetpack/9.9.1/_inc/build/photon/photon.min.js' id='jetpack-photon-js'></script><script src='https://css-tricks.com/wp-content/themes/CSS-Tricks-19/js/min/jquery-3.5.1.min.js' id='jquery-js'></script><script type='text/javascript' id='jetpack-live-comment-markdown-js-extra'>
+/* <![CDATA[ */
+var markdownify = {"ajax_url":"\/wp-admin\/admin-ajax.php","nonce":"c3e8c03129"};
+/* ]]> */
+</script><script src='https://css-tricks.com/wp-content/plugins/jetpack-markdown-live-preview-comments/js/markdownify.js?ver=1' id='jetpack-live-comment-markdown-js'></script><script id='jetpack-instant-search-ie11-js-before'>
+var JetpackInstantSearchIe11PolyfillPath=decodeURIComponent("https%3A%2F%2Fcss-tricks.com%2Fwp-content%2Fplugins%2Fjetpack%2F_inc%2Fbuild%2Finstant-search%2Fjp-search-ie11-polyfill-payload.bundle.js");
+</script><script src='https://c0.wp.com/p/jetpack/9.9.1/_inc/build/instant-search/jp-search-ie11-polyfill-loader.bundle.js' id='jetpack-instant-search-ie11-js'></script><script src='https://c0.wp.com/c/5.8/wp-includes/js/dist/vendor/regenerator-runtime.min.js' id='regenerator-runtime-js'></script><script src='https://c0.wp.com/c/5.8/wp-includes/js/dist/vendor/wp-polyfill.min.js' id='wp-polyfill-js'></script><script src='https://c0.wp.com/c/5.8/wp-includes/js/dist/hooks.min.js' id='wp-hooks-js'></script><script src='https://c0.wp.com/c/5.8/wp-includes/js/dist/i18n.min.js' id='wp-i18n-js'></script><script id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script><script id='jetpack-instant-search-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "jetpack", { "locale_data": { "messages": { "": {} } } } );
+</script><script id='jetpack-instant-search-js-before'>
+var JetpackInstantSearchOptions=JSON.parse(decodeURIComponent("%7B%22overlayOptions%22%3A%7B%22colorTheme%22%3A%22dark%22%2C%22enableInfScroll%22%3Afalse%2C%22enableSort%22%3Atrue%2C%22highlightColor%22%3A%22%23f4af38%22%2C%22overlayTrigger%22%3A%22results%22%2C%22resultFormat%22%3A%22expanded%22%2C%22showPoweredBy%22%3Atrue%2C%22defaultSort%22%3A%22relevance%22%2C%22excludedPostTypes%22%3A%5B%22attachment%22%2C%22screenshot%22%5D%7D%2C%22homeUrl%22%3A%22https%3A%5C%2F%5C%2Fcss-tricks.com%22%2C%22locale%22%3A%22en-US%22%2C%22postsPerPage%22%3A11%2C%22siteId%22%3A45537868%2C%22postTypes%22%3A%7B%22post%22%3A%7B%22singular_name%22%3A%22Post%22%2C%22name%22%3A%22Posts%22%7D%2C%22page%22%3A%7B%22singular_name%22%3A%22Page%22%2C%22name%22%3A%22Pages%22%7D%2C%22attachment%22%3A%7B%22singular_name%22%3A%22Media%22%2C%22name%22%3A%22Media%22%7D%2C%22product%22%3A%7B%22singular_name%22%3A%22Product%22%2C%22name%22%3A%22Products%22%7D%2C%22screenshot%22%3A%7B%22singular_name%22%3A%22Screenshot%22%2C%22name%22%3A%22Screenshots%22%7D%2C%22guides%22%3A%7B%22singular_name%22%3A%22Guide%22%2C%22name%22%3A%22Guides%22%7D%2C%22newsletters%22%3A%7B%22singular_name%22%3A%22Newsletter%22%2C%22name%22%3A%22Newsletters%22%7D%2C%22chapters%22%3A%7B%22singular_name%22%3A%22Chapter%22%2C%22name%22%3A%22Chapters%22%7D%7D%2C%22webpackPublicPath%22%3A%22https%3A%5C%2F%5C%2Fcss-tricks.com%5C%2Fwp-content%5C%2Fplugins%5C%2Fjetpack%5C%2F_inc%5C%2Fbuild%5C%2Finstant-search%5C%2F%22%2C%22isPhotonEnabled%22%3Atrue%2C%22apiRoot%22%3A%22https%3A%5C%2F%5C%2Fcss-tricks.com%5C%2Fwp-json%5C%2F%22%2C%22apiNonce%22%3A%2244fa3bdafd%22%2C%22isPrivateSite%22%3Afalse%2C%22isWpcom%22%3Afalse%2C%22hasOverlayWidgets%22%3Atrue%2C%22widgets%22%3A%5B%7B%22filters%22%3A%5B%7B%22name%22%3A%22Post%20Types%22%2C%22type%22%3A%22post_type%22%2C%22count%22%3A5%2C%22widget_id%22%3A%22jetpack-search-filters-5%22%2C%22filter_id%22%3A%22post_type_0%22%7D%2C%7B%22name%22%3A%22Year%22%2C%22type%22%3A%22date_histogram%22%2C%22count%22%3A1%2C%22field%22%3A%22post_date%22%2C%22interval%22%3A%22year%22%2C%22widget_id%22%3A%22jetpack-search-filters-5%22%2C%22filter_id%22%3A%22date_histogram_1%22%7D%2C%7B%22name%22%3A%22Tags%22%2C%22type%22%3A%22taxonomy%22%2C%22taxonomy%22%3A%22post_tag%22%2C%22count%22%3A5%2C%22widget_id%22%3A%22jetpack-search-filters-5%22%2C%22filter_id%22%3A%22taxonomy_2%22%7D%5D%2C%22widget_id%22%3A%22jetpack-search-filters-5%22%7D%5D%2C%22widgetsOutsideOverlay%22%3A%5B%5D%2C%22hasNonSearchWidgets%22%3Atrue%2C%22adminQueryFilter%22%3A%7B%22bool%22%3A%7B%22should%22%3A%5B%7B%22term%22%3A%7B%22post_type%22%3A%22post%22%7D%7D%2C%7B%22term%22%3A%7B%22post_type%22%3A%22page%22%7D%7D%2C%7B%22term%22%3A%7B%22post_type%22%3A%22newsletters%22%7D%7D%2C%7B%22term%22%3A%7B%22post_type%22%3A%22chapters%22%7D%7D%5D%7D%7D%7D"));
+</script><script src='https://c0.wp.com/p/jetpack/9.9.1/_inc/build/instant-search/jp-search-main.bundle.js' id='jetpack-instant-search-js'></script><script src='//stats.wp.com/w.js?ver=202131' id='jp-tracks-js'></script><script src='https://css-tricks.com/wp-content/plugins/jetpack-boost/vendor/automattic/jetpack-lazy-images/src/../dist/intersection-observer.js?ver=1.1.3' id='jetpack-lazy-images-polyfill-intersectionobserver-js'></script><script type='text/javascript' id='jetpack-lazy-images-js-extra'>
+/* <![CDATA[ */
+var jetpackLazyImagesL10n = {"loading_warning":"Images are still loading. Please cancel your print and try again."};
+/* ]]> */
+</script><script src='https://css-tricks.com/wp-content/plugins/jetpack-boost/vendor/automattic/jetpack-lazy-images/src/../dist/lazy-images.js?ver=1.1.3' id='jetpack-lazy-images-js'></script><script type='text/javascript' id='jetpack_related-posts-js-extra'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script><script src='https://c0.wp.com/p/jetpack/9.9.1/_inc/build/related-posts/related-posts.min.js' id='jetpack_related-posts-js'></script><script type="text/javascript">
+jQuery(function($) { 
+
+			$( '.add_to_cart_button:not(.product_type_variable, .product_type_grouped)' ).on( 'click', function() {
+				gtag( 'event', 'add_to_cart', { 'event_category': 'ecommerce', 'event_label': ($(this).data('product_sku')) ? ($(this).data('product_sku')) : ('#' + $(this).data('product_id')), 'items': [ {'id': ($(this).data('product_sku')) ? ($(this).data('product_sku')) : ('#' + $(this).data('product_id')),'quantity': $(this).data('quantity')} ] } );
+			});
+		
+ });
+</script><script src='https://stats.wp.com/e-202131.js' defer></script><script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:9.9.1',blog:'45537868',post:'198754',tz:'-7',srv:'css-tricks.com'} ]);
+	_stq.push([ 'clickTrackerInit', '45537868', '198754' ]);
+</script><script>
+    window.activeMember = false;
+  </script><script src="https://css-tricks.com/wp-content/themes/CSS-Tricks-19/js/min/global-concat.min.js?cache_bust=1627429007822"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-68528-29', 'auto');
+
+  if (typeof articleYear !== "undefined") {
+    ga('set', 'dimension1', articleYear);
+  }
+  if (typeof articleAuthor !== "undefined") {
+    ga('set', 'dimension2', articleAuthor);
+  }
+  if (typeof articleType !== "undefined") {
+    ga('set', 'dimension3', articleType);
+  }
+
+  ga('send', 'pageview');
+</script><script async src="https://static.codepen.io/assets/embed/ei.js"></script><script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"6798c1616d3b3205","token":"2863ac31b15c48f5b94bd8b0c38aba94","version":"2021.7.0","si":10}'></script>
+</body>
+</html>
